@@ -1,0 +1,17 @@
+---
+title: "About"
+---
+
+## Background
+
+Ekonomi/ekonometri geçmişin, eğitim yolculuğun (kısa bir paragraf).
+
+## What I Work On
+
+- Financial time series (ARDL, VECM, GARCH-family models)
+- Machine learning for risk detection
+- ...
+
+## Where I'm Headed
+
+Yüksek lisans / PhD hedefin, kariyer yönün hakkında bir-iki cümle.

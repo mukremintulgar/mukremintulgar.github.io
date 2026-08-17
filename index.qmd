@@ -1,0 +1,11 @@
+---
+title: "Mükremin Tulgar"
+---
+## Data Scientist & Financial Analyst
+
+I'm passionate about Econometrics and Data Science, with strong hands-on experience in building and analyzing quantitative models — from data modelling and forecasting to machine learning and risk models. I'm proficient in Python, R, SQL, VBA.
+
+## Contact
+- Email: [mukremintulgar@gmail.com](mailto:mukremintulgar@gmail.com)
+- Github : [github.com/mukremintulgar](https://github.com/mukremintulgar)
+- Linkedin : [linkedin.com/in/mukremin-tulgar-b6204b404](https://www.linkedin.com/in/mukremin-tulgar-b6204b404/)

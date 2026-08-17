@@ -1,0 +1,14 @@
+---
+title: "Monte Carlo Portfolio Stress Test"
+description: "A Monte Carlo simulation evaluating downside risk in a multi-asset portfolio."
+---
+
+A Monte Carlo simulation to evaluate downside risk in a multi-asset portfolio 
+(SPY / IEF / GLD), estimating historical VaR and CVaR and simulating extreme-loss 
+stress scenarios.
+
+**Tools:** Python, yfinance, pandas, numpy, matplotlib
+
+## Analysis
+
+{{< embed notebooks/monte_carlo_portfolio_stress_test.ipynb echo=true >}}

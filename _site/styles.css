@@ -1,0 +1,99 @@
+/* css styles */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --amber: #F2A93B;
+  --teal: #4FB6AD;
+  --bg: #0A0C10;
+  --panel: #10141B;
+  --line: #222834;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--bg) !important;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--panel) !important;
+  border-bottom: 1px solid var(--line);
+}
+.navbar-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.navbar-nav .nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+.navbar-nav .nav-link.active {
+  color: var(--amber) !important;
+}
+
+/* Sidebar */
+#quarto-sidebar {
+  background-color: var(--bg);
+  border-right: 1px solid var(--line);
+}
+.sidebar-item-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+}
+.sidebar-item.active > .sidebar-item-container .sidebar-item-text {
+  color: var(--amber) !important;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+h2 {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+/* Links */
+a {
+  color: var(--teal);
+}
+a:hover {
+  color: var(--amber);
+}
+
+/* Listing grid cards (Projects page) */
+.quarto-grid-item {
+  background-color: var(--panel);
+  border: 1px solid var(--line) !important;
+  border-radius: 8px;
+  transition: transform .2s, border-color .2s;
+}
+.quarto-grid-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--amber) !important;
+}
+.quarto-grid-item .card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+/* Code blocks */
+pre, code {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+div.sourceCode {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+/* Table of contents (right side) */
+#TOC {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+}
+#TOC .active {
+  color: var(--amber) !important;
+}

@@ -1,0 +1,13 @@
+---
+title: "Projects"
+listing:
+  contents: 
+    - "*-project.qmd"
+  type: grid
+  fields: [title, description]
+  sort: "date desc"
+---
+
+## [Monte Carlo Portfolio Stress Test](monte-carlo-project.qmd)
+A Monte Carlo simulation evaluating downside risk in a multi-asset portfolio, 
+with historical and simulated VaR/CVaR estimates.
