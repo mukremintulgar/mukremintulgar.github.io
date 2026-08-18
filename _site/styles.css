@@ -569,3 +569,487 @@ pre, code {
   position: relative;
   z-index: 2;
 }
+
+
+/* =========================================================
+   Monte Carlo case-study page
+   ========================================================= */
+
+.case-study-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.project-hero {
+  padding: clamp(4.5rem, 8vw, 7rem) 0 3.5rem;
+}
+
+.project-back-link {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+  color: var(--muted-2);
+}
+
+.project-back-link:hover {
+  color: var(--amber);
+}
+
+.project-hero-kicker,
+.case-label,
+.result-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  color: var(--amber);
+}
+
+.project-hero-title {
+  margin: 0.9rem 0 1.3rem;
+  max-width: 920px;
+  font-size: clamp(3.2rem, 7vw, 6.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.project-hero-title span {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(243,245,247,0.52);
+}
+
+.project-hero-lead {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  line-height: 1.7;
+}
+
+.project-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.project-meta-strip {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr 1fr;
+  margin-top: 4rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-meta-strip > div {
+  padding: 1.1rem 1.15rem 1.1rem 0;
+}
+
+.project-meta-strip > div:not(:last-child) {
+  margin-right: 1.15rem;
+  border-right: 1px solid var(--line);
+}
+
+.project-meta-strip span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: var(--muted-2);
+}
+
+.project-meta-strip strong {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Section typography */
+
+.case-study-page > h2 {
+  margin-top: 5.8rem;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.case-study-page > h2::before {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.13em;
+  color: var(--amber);
+}
+
+.case-study-page > h2:nth-of-type(1)::before { content: "01 · PROJECT"; }
+.case-study-page > h2:nth-of-type(2)::before { content: "02 · PROCESS"; }
+.case-study-page > h2:nth-of-type(3)::before { content: "03 · OUTCOME"; }
+.case-study-page > h2:nth-of-type(4)::before { content: "04 · EVIDENCE"; }
+.case-study-page > h2:nth-of-type(5)::before { content: "05 · CODE"; }
+.case-study-page > h2:nth-of-type(6)::before { content: "06 · WRAP-UP"; }
+
+.case-study-page > h3 {
+  margin-top: 3.2rem;
+  font-size: 1.45rem;
+  letter-spacing: -0.025em;
+}
+
+.case-study-page > p {
+  max-width: 820px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Intro cards */
+
+.case-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-intro-card,
+.allocation-card,
+.method-card,
+.result-card,
+.implementation-intro,
+.project-end-cta {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.012));
+  border-radius: 8px;
+}
+
+.case-intro-card {
+  min-height: 225px;
+  padding: 1.55rem;
+}
+
+.case-intro-card h3 {
+  margin: 2.2rem 0 0.7rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.case-intro-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.allocation-card {
+  margin-top: 1rem;
+  padding: 1.55rem;
+}
+
+.allocation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.45rem;
+}
+
+.allocation-total {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted-2);
+}
+
+.allocation-row {
+  display: grid;
+  grid-template-columns: 145px 1fr 48px;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.allocation-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+}
+
+.allocation-name strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.allocation-name span {
+  color: var(--muted-2);
+  font-size: 0.78rem;
+}
+
+.allocation-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #1A202A;
+}
+
+.allocation-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: var(--amber);
+}
+
+.allocation-spy { width: 50%; }
+.allocation-ief { width: 30%; background: var(--teal); }
+.allocation-gld { width: 20%; background: #8B94A1; }
+
+.allocation-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-align: right;
+  color: #C6CDD7;
+}
+
+/* Method */
+
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.method-card {
+  min-height: 220px;
+  padding: 1.25rem;
+}
+
+.method-card > span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--amber);
+}
+
+.method-card h3 {
+  margin: 2.5rem 0 0.65rem;
+  font-size: 1.08rem;
+}
+
+.method-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+/* Results */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.result-card {
+  min-height: 175px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card strong {
+  display: block;
+  margin-top: auto;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.055em;
+  color: var(--text);
+}
+
+.result-card small {
+  margin-top: 0.2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--muted-2);
+}
+
+.featured-result {
+  border-color: rgba(242,169,59,0.55);
+  background: linear-gradient(180deg, rgba(242,169,59,0.07), rgba(255,255,255,0.012));
+}
+
+.case-insight {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-left: 2px solid var(--amber);
+  background: rgba(242,169,59,0.045);
+}
+
+.case-insight p {
+  margin: 0.65rem 0 0;
+  max-width: 850px;
+  color: #C4CBD4;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.case-insight strong {
+  color: var(--text);
+}
+
+/* Notebook embeds */
+
+.case-study-page .cell {
+  margin: 1.2rem 0 2.5rem;
+}
+
+.case-study-page .cell-output-display {
+  overflow-x: auto;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.015);
+}
+
+.case-study-page .cell-output-display img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.case-study-page table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.case-study-page table thead {
+  border-bottom: 1px solid var(--line);
+}
+
+.case-study-page table td,
+.case-study-page table th {
+  padding: 0.7rem 0.85rem;
+  border-color: var(--line);
+}
+
+.case-study-page details.code-fold {
+  margin-top: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.012);
+}
+
+.case-study-page details.code-fold summary {
+  padding: 0.75rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--amber);
+}
+
+/* Implementation */
+
+.implementation-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.implementation-intro h3 {
+  margin: 0.75rem 0 0.55rem;
+  font-size: 1.35rem;
+}
+
+.implementation-intro p {
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* End CTA */
+
+.project-end-cta {
+  margin: 4.5rem 0 1rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.project-end-cta h3 {
+  margin: 0.75rem 0 1.2rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -0.04em;
+}
+
+/* TOC */
+
+#TOC {
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+}
+
+#TOC .toc-title {
+  margin-bottom: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.11em;
+  color: var(--muted-2);
+  text-transform: uppercase;
+}
+
+#TOC ul {
+  border-left: 0 !important;
+}
+
+#TOC a {
+  line-height: 1.4;
+  color: #9DA6B2;
+}
+
+#TOC a:hover,
+#TOC .active {
+  color: var(--amber) !important;
+}
+
+/* Responsive case study */
+
+@media (max-width: 980px) {
+  .case-study-page {
+    max-width: none;
+  }
+
+  .method-grid,
+  .result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .project-meta-strip,
+  .case-intro-grid,
+  .method-grid,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta-strip > div:not(:last-child) {
+    margin-right: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .allocation-row {
+    grid-template-columns: 90px 1fr 42px;
+    gap: 0.7rem;
+  }
+
+  .allocation-name span {
+    display: none;
+  }
+
+  .implementation-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
