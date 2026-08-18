@@ -4,288 +4,154 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "A Monte Carlo simulation evaluating downside risk in a multi-asset portfolio, with historical and simulated VaR/CVaR estimates.",
-    "crumbs": [
-      "Home",
-      "Projects"
-    ]
-  },
-  {
-    "objectID": "projects.html#monte-carlo-portfolio-stress-test",
-    "href": "projects.html#monte-carlo-portfolio-stress-test",
-    "title": "Projects",
-    "section": "",
-    "text": "A Monte Carlo simulation evaluating downside risk in a multi-asset portfolio, with historical and simulated VaR/CVaR estimates.",
-    "crumbs": [
-      "Home",
-      "Projects"
-    ]
+    "text": "PORTFOLIO\n  Selected Projects\n  Applied work across financial risk, econometrics, data analysis and quantitative modelling.\n\n\n\n  \n    \n      01\n      ↗\n    \n    FINANCIAL RISK · PYTHON\n    Monte Carlo Portfolio Stress Test\n    Historical and simulated downside-risk analysis for a diversified portfolio.\n    \n      Python\n      Monte Carlo\n      VaR/CVaR"
   },
   {
     "objectID": "monte-carlo-project.html",
     "href": "monte-carlo-project.html",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "",
-    "text": "A Monte Carlo simulation to evaluate downside risk in a multi-asset portfolio (SPY / IEF / GLD), estimating historical VaR and CVaR and simulating extreme-loss stress scenarios.\nTools: Python, yfinance, pandas, numpy, matplotlib",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "A Monte Carlo simulation to evaluate downside risk in a multi-asset portfolio (SPY / IEF / GLD), estimating historical VaR and CVaR and simulating extreme-loss stress scenarios.\nTools: Python, yfinance, pandas, numpy, matplotlib"
   },
   {
     "objectID": "monte-carlo-project.html#analysis",
     "href": "monte-carlo-project.html#analysis",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Analysis",
-    "text": "Analysis",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "Analysis"
   },
   {
     "objectID": "monte-carlo-project.html#import-libraries",
     "href": "monte-carlo-project.html#import-libraries",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "1. Import libraries",
-    "text": "1. Import libraries\nThe notebook uses yfinance for market data, pandas and numpy for calculations, and matplotlib for visualization.\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport yfinance as yf\n\npd.set_option(\"display.float_format\", lambda x: f\"{x:,.6f}\")",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "1. Import libraries\nThe notebook uses yfinance for market data, pandas and numpy for calculations, and matplotlib for visualization.\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport yfinance as yf\n\npd.set_option(\"display.float_format\", lambda x: f\"{x:,.6f}\")"
   },
   {
     "objectID": "monte-carlo-project.html#define-portfolio-and-analysis-settings",
     "href": "monte-carlo-project.html#define-portfolio-and-analysis-settings",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "2. Define portfolio and analysis settings",
-    "text": "2. Define portfolio and analysis settings\nThe weights sum to 100%. The dates can be changed if a different historical sample is preferred.\n\ntickers = [\"SPY\", \"IEF\", \"GLD\"]\n\nweights = pd.Series(\n    [0.50, 0.30, 0.20],\n    index=tickers,\n    name=\"Weight\"\n)\n\nstart_date = \"2015-01-01\"\nend_date = \"2025-12-31\"\n\nconfidence_level = 0.99\nsimulations = 10_000\nrandom_seed = 42\n\nprint(\"Portfolio weights:\")\nprint(weights)\nprint(\"\\nSum of weights:\", weights.sum())\n\nPortfolio weights:\nSPY   0.500000\nIEF   0.300000\nGLD   0.200000\nName: Weight, dtype: float64\n\nSum of weights: 1.0",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "2. Define portfolio and analysis settings\nThe weights sum to 100%. The dates can be changed if a different historical sample is preferred.\n\ntickers = [\"SPY\", \"IEF\", \"GLD\"]\n\nweights = pd.Series(\n    [0.50, 0.30, 0.20],\n    index=tickers,\n    name=\"Weight\"\n)\n\nstart_date = \"2015-01-01\"\nend_date = \"2025-12-31\"\n\nconfidence_level = 0.99\nsimulations = 10_000\nrandom_seed = 42\n\nprint(\"Portfolio weights:\")\nprint(weights)\nprint(\"\\nSum of weights:\", weights.sum())\n\nPortfolio weights:\nSPY   0.500000\nIEF   0.300000\nGLD   0.200000\nName: Weight, dtype: float64\n\nSum of weights: 1.0"
   },
   {
     "objectID": "monte-carlo-project.html#download-historical-prices",
     "href": "monte-carlo-project.html#download-historical-prices",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "3. Download historical prices",
-    "text": "3. Download historical prices\nyfinance is used to download daily adjusted market prices. With auto_adjust=True, the downloaded OHLC data are adjusted for corporate actions.\n\ndata = yf.download(\n    tickers,\n    start=start_date,\n    end=end_date,\n    auto_adjust=True,\n    progress=False\n)\n\nprices = data[\"Close\"].dropna()\n\nprint(\"Price data shape:\", prices.shape)\ndisplay(prices.head())\n\nPrice data shape: (2765, 3)\n\n\n\n\n\n\n\n\nTicker\nGLD\nIEF\nSPY\n\n\nDate\n\n\n\n\n\n\n\n2015-01-02\n114.080002\n82.037621\n169.687790\n\n\n2015-01-05\n115.800003\n82.538185\n166.623383\n\n\n2015-01-06\n117.120003\n83.092651\n165.053879\n\n\n2015-01-07\n116.430000\n83.077217\n167.110733\n\n\n2015-01-08\n115.940002\n82.738358\n170.076065",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "3. Download historical prices\nyfinance is used to download daily adjusted market prices. With auto_adjust=True, the downloaded OHLC data are adjusted for corporate actions.\n\ndata = yf.download(\n    tickers,\n    start=start_date,\n    end=end_date,\n    auto_adjust=True,\n    progress=False\n)\n\nprices = data[\"Close\"].dropna()\n\nprint(\"Price data shape:\", prices.shape)\ndisplay(prices.head())\n\nPrice data shape: (2765, 3)\n\n\n\n\n\n\n\n\nTicker\nGLD\nIEF\nSPY\n\n\nDate\n\n\n\n\n\n\n\n2015-01-02\n114.080002\n82.037621\n169.687790\n\n\n2015-01-05\n115.800003\n82.538185\n166.623383\n\n\n2015-01-06\n117.120003\n83.092651\n165.053879\n\n\n2015-01-07\n116.430000\n83.077217\n167.110733\n\n\n2015-01-08\n115.940002\n82.738358\n170.076065"
   },
   {
     "objectID": "monte-carlo-project.html#visualize-normalized-asset-prices",
     "href": "monte-carlo-project.html#visualize-normalized-asset-prices",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "4. Visualize normalized asset prices",
-    "text": "4. Visualize normalized asset prices\nNormalizing each series to 100 makes the relative historical performance of the three assets easier to compare.\n\nnormalized_prices = prices / prices.iloc[0] * 100\n\nax = normalized_prices.plot(figsize=(11, 5))\nax.set_title(\"Normalized Asset Prices\")\nax.set_xlabel(\"Date\")\nax.set_ylabel(\"Index (Start = 100)\")\nax.grid(alpha=0.3)\nplt.show()",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "4. Visualize normalized asset prices\nNormalizing each series to 100 makes the relative historical performance of the three assets easier to compare.\n\nnormalized_prices = prices / prices.iloc[0] * 100\n\nax = normalized_prices.plot(figsize=(11, 5))\nax.set_title(\"Normalized Asset Prices\")\nax.set_xlabel(\"Date\")\nax.set_ylabel(\"Index (Start = 100)\")\nax.grid(alpha=0.3)\nplt.show()"
   },
   {
     "objectID": "monte-carlo-project.html#calculate-daily-log-returns",
     "href": "monte-carlo-project.html#calculate-daily-log-returns",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "5. Calculate daily log returns",
-    "text": "5. Calculate daily log returns\nFor each asset:\n[ r_t = () ]\nLog returns are then aggregated using the portfolio weights.\n\nlog_returns = np.log(prices / prices.shift(1)).dropna()\n\nportfolio_returns = log_returns.dot(weights)\nportfolio_returns.name = \"Portfolio Return\"\n\ndisplay(log_returns.head())\ndisplay(portfolio_returns.head())\n\n\n\n\n\n\n\nTicker\nGLD\nIEF\nSPY\n\n\nDate\n\n\n\n\n\n\n\n2015-01-05\n0.014965\n0.006083\n-0.018224\n\n\n2015-01-06\n0.011334\n0.006695\n-0.009464\n\n\n2015-01-07\n-0.005909\n-0.000186\n0.012385\n\n\n2015-01-08\n-0.004217\n-0.004087\n0.017589\n\n\n2015-01-09\n0.011321\n0.004921\n-0.008046\n\n\n\n\n\n\n\nDate\n2015-01-05   -0.004294\n2015-01-06   -0.000457\n2015-01-07    0.004955\n2015-01-08    0.006725\n2015-01-09   -0.000282\nName: Portfolio Return, dtype: float64",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "5. Calculate daily log returns\nFor each asset:\n[ r_t = () ]\nLog returns are then aggregated using the portfolio weights.\n\nlog_returns = np.log(prices / prices.shift(1)).dropna()\n\nportfolio_returns = log_returns.dot(weights)\nportfolio_returns.name = \"Portfolio Return\"\n\ndisplay(log_returns.head())\ndisplay(portfolio_returns.head())\n\n\n\n\n\n\n\nTicker\nGLD\nIEF\nSPY\n\n\nDate\n\n\n\n\n\n\n\n2015-01-05\n0.014965\n0.006083\n-0.018224\n\n\n2015-01-06\n0.011334\n0.006695\n-0.009464\n\n\n2015-01-07\n-0.005909\n-0.000186\n0.012385\n\n\n2015-01-08\n-0.004217\n-0.004087\n0.017589\n\n\n2015-01-09\n0.011321\n0.004921\n-0.008046\n\n\n\n\n\n\n\nDate\n2015-01-05   -0.004294\n2015-01-06   -0.000457\n2015-01-07    0.004955\n2015-01-08    0.006725\n2015-01-09   -0.000282\nName: Portfolio Return, dtype: float64"
   },
   {
     "objectID": "monte-carlo-project.html#portfolio-return-summary",
     "href": "monte-carlo-project.html#portfolio-return-summary",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "6. Portfolio return summary",
-    "text": "6. Portfolio return summary\nThe following statistics summarize the historical daily return distribution. Annualized return and volatility use 252 trading days per year.\n\nmean_daily = portfolio_returns.mean()\nstd_daily = portfolio_returns.std()\n\nannualized_return = mean_daily * 252\nannualized_volatility = std_daily * np.sqrt(252)\n\nsummary = pd.Series({\n    \"Mean Daily Return\": mean_daily,\n    \"Daily Volatility\": std_daily,\n    \"Annualized Return\": annualized_return,\n    \"Annualized Volatility\": annualized_volatility,\n    \"Minimum Daily Return\": portfolio_returns.min(),\n    \"Maximum Daily Return\": portfolio_returns.max()\n})\n\ndisplay(summary.to_frame(\"Value\"))\n\nprint(f\"Annualized return: {annualized_return:.2%}\")\nprint(f\"Annualized volatility: {annualized_volatility:.2%}\")\n\n\n\n\n\n\n\n\nValue\n\n\n\n\nMean Daily Return\n0.000358\n\n\nDaily Volatility\n0.006071\n\n\nAnnualized Return\n0.090142\n\n\nAnnualized Volatility\n0.096381\n\n\nMinimum Daily Return\n-0.058273\n\n\nMaximum Daily Return\n0.056247\n\n\n\n\n\n\n\nAnnualized return: 9.01%\nAnnualized volatility: 9.64%",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "6. Portfolio return summary\nThe following statistics summarize the historical daily return distribution. Annualized return and volatility use 252 trading days per year.\n\nmean_daily = portfolio_returns.mean()\nstd_daily = portfolio_returns.std()\n\nannualized_return = mean_daily * 252\nannualized_volatility = std_daily * np.sqrt(252)\n\nsummary = pd.Series({\n    \"Mean Daily Return\": mean_daily,\n    \"Daily Volatility\": std_daily,\n    \"Annualized Return\": annualized_return,\n    \"Annualized Volatility\": annualized_volatility,\n    \"Minimum Daily Return\": portfolio_returns.min(),\n    \"Maximum Daily Return\": portfolio_returns.max()\n})\n\ndisplay(summary.to_frame(\"Value\"))\n\nprint(f\"Annualized return: {annualized_return:.2%}\")\nprint(f\"Annualized volatility: {annualized_volatility:.2%}\")\n\n\n\n\n\n\n\n\nValue\n\n\n\n\nMean Daily Return\n0.000358\n\n\nDaily Volatility\n0.006071\n\n\nAnnualized Return\n0.090142\n\n\nAnnualized Volatility\n0.096381\n\n\nMinimum Daily Return\n-0.058273\n\n\nMaximum Daily Return\n0.056247\n\n\n\n\n\n\n\nAnnualized return: 9.01%\nAnnualized volatility: 9.64%"
   },
   {
     "objectID": "monte-carlo-project.html#historical-var-and-cvar-at-99",
     "href": "monte-carlo-project.html#historical-var-and-cvar-at-99",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "7. Historical VaR and CVaR at 99%",
-    "text": "7. Historical VaR and CVaR at 99%\n\nVaR (99%) estimates the loss threshold exceeded in approximately the worst 1% of historical observations.\nCVaR / Expected Shortfall (99%) is the average loss conditional on being beyond that VaR threshold.\n\nThe notebook reports losses as positive percentages for easier interpretation.\n\ntail_probability = 1 - confidence_level\n\nhistorical_threshold = np.quantile(portfolio_returns, tail_probability)\nhistorical_var_99 = -historical_threshold\n\nhistorical_tail = portfolio_returns[portfolio_returns &lt;= historical_threshold]\nhistorical_cvar_99 = -historical_tail.mean()\n\nprint(f\"Historical VaR (99%):  {historical_var_99:.2%}\")\nprint(f\"Historical CVaR (99%): {historical_cvar_99:.2%}\")\nprint(f\"Historical tail observations: {len(historical_tail)}\")\n\nHistorical VaR (99%):  1.65%\nHistorical CVaR (99%): 2.52%\nHistorical tail observations: 28",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "7. Historical VaR and CVaR at 99%\n\nVaR (99%) estimates the loss threshold exceeded in approximately the worst 1% of historical observations.\nCVaR / Expected Shortfall (99%) is the average loss conditional on being beyond that VaR threshold.\n\nThe notebook reports losses as positive percentages for easier interpretation.\n\ntail_probability = 1 - confidence_level\n\nhistorical_threshold = np.quantile(portfolio_returns, tail_probability)\nhistorical_var_99 = -historical_threshold\n\nhistorical_tail = portfolio_returns[portfolio_returns &lt;= historical_threshold]\nhistorical_cvar_99 = -historical_tail.mean()\n\nprint(f\"Historical VaR (99%):  {historical_var_99:.2%}\")\nprint(f\"Historical CVaR (99%): {historical_cvar_99:.2%}\")\nprint(f\"Historical tail observations: {len(historical_tail)}\")\n\nHistorical VaR (99%):  1.65%\nHistorical CVaR (99%): 2.52%\nHistorical tail observations: 28"
   },
   {
     "objectID": "monte-carlo-project.html#monte-carlo-simulation",
     "href": "monte-carlo-project.html#monte-carlo-simulation",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "8. Monte Carlo simulation",
-    "text": "8. Monte Carlo simulation\nA simple parametric Monte Carlo model is used. It assumes daily portfolio returns follow a normal distribution with the historical mean and standard deviation.\nThis is intentionally a simple baseline stress model. Real financial returns can exhibit skewness, fat tails, volatility clustering, and regime changes.\n\nnp.random.seed(random_seed)\n\nmean_return = portfolio_returns.mean()\nstd_return = portfolio_returns.std()\n\nsimulated_returns = np.random.normal(\n    loc=mean_return,\n    scale=std_return,\n    size=simulations\n)\n\nprint(\"Number of simulations:\", len(simulated_returns))\nprint(f\"Simulated mean return: {simulated_returns.mean():.4%}\")\nprint(f\"Simulated volatility:  {simulated_returns.std(ddof=1):.4%}\")\n\nNumber of simulations: 10000\nSimulated mean return: 0.0345%\nSimulated volatility:  0.6092%",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "8. Monte Carlo simulation\nA simple parametric Monte Carlo model is used. It assumes daily portfolio returns follow a normal distribution with the historical mean and standard deviation.\nThis is intentionally a simple baseline stress model. Real financial returns can exhibit skewness, fat tails, volatility clustering, and regime changes.\n\nnp.random.seed(random_seed)\n\nmean_return = portfolio_returns.mean()\nstd_return = portfolio_returns.std()\n\nsimulated_returns = np.random.normal(\n    loc=mean_return,\n    scale=std_return,\n    size=simulations\n)\n\nprint(\"Number of simulations:\", len(simulated_returns))\nprint(f\"Simulated mean return: {simulated_returns.mean():.4%}\")\nprint(f\"Simulated volatility:  {simulated_returns.std(ddof=1):.4%}\")\n\nNumber of simulations: 10000\nSimulated mean return: 0.0345%\nSimulated volatility:  0.6092%"
   },
   {
     "objectID": "monte-carlo-project.html#monte-carlo-99-stress-loss-and-expected-shortfall",
     "href": "monte-carlo-project.html#monte-carlo-99-stress-loss-and-expected-shortfall",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "9. Monte Carlo 99% stress loss and Expected Shortfall",
-    "text": "9. Monte Carlo 99% stress loss and Expected Shortfall\nThe 1st percentile of simulated returns is the 99% downside threshold. Expected Shortfall averages simulated returns that fall below that threshold.\n\nmc_threshold = np.quantile(simulated_returns, tail_probability)\nmc_var_99 = -mc_threshold\n\nmc_tail = simulated_returns[simulated_returns &lt;= mc_threshold]\nmc_cvar_99 = -mc_tail.mean()\n\nprint(f\"Monte Carlo VaR / Stress Loss (99%): {mc_var_99:.2%}\")\nprint(f\"Monte Carlo CVaR (99%):             {mc_cvar_99:.2%}\")\nprint(f\"Simulated tail observations:        {len(mc_tail)}\")\n\nMonte Carlo VaR / Stress Loss (99%): 1.37%\nMonte Carlo CVaR (99%):             1.60%\nSimulated tail observations:        100",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "9. Monte Carlo 99% stress loss and Expected Shortfall\nThe 1st percentile of simulated returns is the 99% downside threshold. Expected Shortfall averages simulated returns that fall below that threshold.\n\nmc_threshold = np.quantile(simulated_returns, tail_probability)\nmc_var_99 = -mc_threshold\n\nmc_tail = simulated_returns[simulated_returns &lt;= mc_threshold]\nmc_cvar_99 = -mc_tail.mean()\n\nprint(f\"Monte Carlo VaR / Stress Loss (99%): {mc_var_99:.2%}\")\nprint(f\"Monte Carlo CVaR (99%):             {mc_cvar_99:.2%}\")\nprint(f\"Simulated tail observations:        {len(mc_tail)}\")\n\nMonte Carlo VaR / Stress Loss (99%): 1.37%\nMonte Carlo CVaR (99%):             1.60%\nSimulated tail observations:        100"
   },
   {
     "objectID": "monte-carlo-project.html#compare-historical-and-monte-carlo-risk-estimates",
     "href": "monte-carlo-project.html#compare-historical-and-monte-carlo-risk-estimates",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "10. Compare historical and Monte Carlo risk estimates",
-    "text": "10. Compare historical and Monte Carlo risk estimates\n\nrisk_comparison = pd.DataFrame({\n    \"Historical\": [historical_var_99, historical_cvar_99],\n    \"Monte Carlo\": [mc_var_99, mc_cvar_99]\n}, index=[\"VaR 99%\", \"CVaR 99%\"])\n\ndisplay(risk_comparison.style.format(\"{:.2%}\"))\n\n\n\n\n\n\n \nHistorical\nMonte Carlo\n\n\n\n\nVaR 99%\n1.65%\n1.37%\n\n\nCVaR 99%\n2.52%\n1.60%",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "10. Compare historical and Monte Carlo risk estimates\n\nrisk_comparison = pd.DataFrame({\n    \"Historical\": [historical_var_99, historical_cvar_99],\n    \"Monte Carlo\": [mc_var_99, mc_cvar_99]\n}, index=[\"VaR 99%\", \"CVaR 99%\"])\n\ndisplay(risk_comparison.style.format(\"{:.2%}\"))\n\n\n\n\n\n\n \nHistorical\nMonte Carlo\n\n\n\n\nVaR 99%\n1.65%\n1.37%\n\n\nCVaR 99%\n2.52%\n1.60%"
   },
   {
     "objectID": "monte-carlo-project.html#visualize-the-simulated-return-distribution",
     "href": "monte-carlo-project.html#visualize-the-simulated-return-distribution",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "11. Visualize the simulated return distribution",
-    "text": "11. Visualize the simulated return distribution\nThe vertical lines show the Monte Carlo 99% VaR threshold and the Monte Carlo CVaR level.\n\nplt.figure(figsize=(11, 5))\n\nplt.hist(simulated_returns, bins=70, alpha=0.75, edgecolor=\"black\")\nplt.axvline(mc_threshold, linestyle=\"--\", linewidth=2, label=f\"99% VaR threshold: {mc_threshold:.2%}\")\nplt.axvline(-mc_cvar_99, linestyle=\":\", linewidth=2, label=f\"99% CVaR: {-mc_cvar_99:.2%}\")\n\nplt.title(\"Monte Carlo Simulated Portfolio Returns\")\nplt.xlabel(\"Daily Portfolio Return\")\nplt.ylabel(\"Frequency\")\nplt.legend()\nplt.grid(alpha=0.25)\nplt.show()",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "11. Visualize the simulated return distribution\nThe vertical lines show the Monte Carlo 99% VaR threshold and the Monte Carlo CVaR level.\n\nplt.figure(figsize=(11, 5))\n\nplt.hist(simulated_returns, bins=70, alpha=0.75, edgecolor=\"black\")\nplt.axvline(mc_threshold, linestyle=\"--\", linewidth=2, label=f\"99% VaR threshold: {mc_threshold:.2%}\")\nplt.axvline(-mc_cvar_99, linestyle=\":\", linewidth=2, label=f\"99% CVaR: {-mc_cvar_99:.2%}\")\n\nplt.title(\"Monte Carlo Simulated Portfolio Returns\")\nplt.xlabel(\"Daily Portfolio Return\")\nplt.ylabel(\"Frequency\")\nplt.legend()\nplt.grid(alpha=0.25)\nplt.show()"
   },
   {
     "objectID": "monte-carlo-project.html#visualize-historical-portfolio-returns",
     "href": "monte-carlo-project.html#visualize-historical-portfolio-returns",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "12. Visualize historical portfolio returns",
-    "text": "12. Visualize historical portfolio returns\nThis chart helps identify periods in which the portfolio experienced unusually large daily losses or gains.\n\nplt.figure(figsize=(11, 5))\n\nplt.plot(portfolio_returns.index, portfolio_returns, linewidth=0.8)\nplt.axhline(historical_threshold, linestyle=\"--\", linewidth=2, label=f\"Historical 99% VaR threshold: {historical_threshold:.2%}\")\n\nplt.title(\"Historical Daily Portfolio Log Returns\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Daily Log Return\")\nplt.legend()\nplt.grid(alpha=0.25)\nplt.show()",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "12. Visualize historical portfolio returns\nThis chart helps identify periods in which the portfolio experienced unusually large daily losses or gains.\n\nplt.figure(figsize=(11, 5))\n\nplt.plot(portfolio_returns.index, portfolio_returns, linewidth=0.8)\nplt.axhline(historical_threshold, linestyle=\"--\", linewidth=2, label=f\"Historical 99% VaR threshold: {historical_threshold:.2%}\")\n\nplt.title(\"Historical Daily Portfolio Log Returns\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Daily Log Return\")\nplt.legend()\nplt.grid(alpha=0.25)\nplt.show()"
   },
   {
     "objectID": "monte-carlo-project.html#final-stress-test-summary",
     "href": "monte-carlo-project.html#final-stress-test-summary",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "13. Final stress-test summary",
-    "text": "13. Final stress-test summary\nThe final table brings together the portfolio composition, historical downside-risk estimates, and Monte Carlo stress estimates.\n\nfinal_results = pd.Series({\n    \"SPY Weight\": weights[\"SPY\"],\n    \"IEF Weight\": weights[\"IEF\"],\n    \"GLD Weight\": weights[\"GLD\"],\n    \"Historical VaR 99%\": historical_var_99,\n    \"Historical CVaR 99%\": historical_cvar_99,\n    \"Monte Carlo VaR 99%\": mc_var_99,\n    \"Monte Carlo CVaR 99%\": mc_cvar_99\n})\n\ndisplay(final_results.to_frame(\"Result\").style.format(\"{:.2%}\"))\n\n\n\n\n\n\n \nResult\n\n\n\n\nSPY Weight\n50.00%\n\n\nIEF Weight\n30.00%\n\n\nGLD Weight\n20.00%\n\n\nHistorical VaR 99%\n1.65%\n\n\nHistorical CVaR 99%\n2.52%\n\n\nMonte Carlo VaR 99%\n1.37%\n\n\nMonte Carlo CVaR 99%\n1.60%",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "13. Final stress-test summary\nThe final table brings together the portfolio composition, historical downside-risk estimates, and Monte Carlo stress estimates.\n\nfinal_results = pd.Series({\n    \"SPY Weight\": weights[\"SPY\"],\n    \"IEF Weight\": weights[\"IEF\"],\n    \"GLD Weight\": weights[\"GLD\"],\n    \"Historical VaR 99%\": historical_var_99,\n    \"Historical CVaR 99%\": historical_cvar_99,\n    \"Monte Carlo VaR 99%\": mc_var_99,\n    \"Monte Carlo CVaR 99%\": mc_cvar_99\n})\n\ndisplay(final_results.to_frame(\"Result\").style.format(\"{:.2%}\"))\n\n\n\n\n\n\n \nResult\n\n\n\n\nSPY Weight\n50.00%\n\n\nIEF Weight\n30.00%\n\n\nGLD Weight\n20.00%\n\n\nHistorical VaR 99%\n1.65%\n\n\nHistorical CVaR 99%\n2.52%\n\n\nMonte Carlo VaR 99%\n1.37%\n\n\nMonte Carlo CVaR 99%\n1.60%"
   },
   {
     "objectID": "monte-carlo-project.html#conclusion",
     "href": "monte-carlo-project.html#conclusion",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Conclusion",
-    "text": "Conclusion\nThis notebook evaluates downside risk for a diversified portfolio consisting of equities, bonds, and gold. Historical VaR and CVaR summarize extreme losses observed in the sample, while the Monte Carlo simulation generates additional return scenarios based on the portfolio’s historical mean and volatility.\nThe model provides a transparent baseline for portfolio stress testing. A more advanced version could incorporate non-normal return distributions, time-varying volatility, correlations that change during crises, multi-day horizons, and explicit historical crisis scenarios.",
-    "crumbs": [
-      "Home",
-      "Case Studies",
-      "Monte Carlo Portfolio Stress Test"
-    ]
+    "text": "Conclusion\nThis notebook evaluates downside risk for a diversified portfolio consisting of equities, bonds, and gold. Historical VaR and CVaR summarize extreme losses observed in the sample, while the Monte Carlo simulation generates additional return scenarios based on the portfolio’s historical mean and volatility.\nThe model provides a transparent baseline for portfolio stress testing. A more advanced version could incorporate non-normal return distributions, time-varying volatility, correlations that change during crises, multi-day horizons, and explicit historical crisis scenarios."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Ekonomi/ekonometri geçmişin, eğitim yolculuğun (kısa bir paragraf).",
-    "crumbs": [
-      "Home",
-      "About"
-    ]
+    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
   },
   {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
     "title": "About",
     "section": "",
-    "text": "Ekonomi/ekonometri geçmişin, eğitim yolculuğun (kısa bir paragraf).",
-    "crumbs": [
-      "Home",
-      "About"
-    ]
+    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
   },
   {
-    "objectID": "about.html#what-i-work-on",
-    "href": "about.html#what-i-work-on",
+    "objectID": "about.html#areas-of-interest",
+    "href": "about.html#areas-of-interest",
     "title": "About",
-    "section": "What I Work On",
-    "text": "What I Work On\n\nFinancial time series (ARDL, VECM, GARCH-family models)\nMachine learning for risk detection\n…",
-    "crumbs": [
-      "Home",
-      "About"
-    ]
+    "section": "Areas of Interest",
+    "text": "Areas of Interest\n\nData Science and Machine Learning\nEconometrics and Time Series\nFinancial Risk and Portfolio Analysis\nQuantitative Research\nData Analytics and Visualization"
   },
   {
-    "objectID": "about.html#where-im-headed",
-    "href": "about.html#where-im-headed",
+    "objectID": "about.html#connect",
+    "href": "about.html#connect",
     "title": "About",
-    "section": "Where I’m Headed",
-    "text": "Where I’m Headed\nYüksek lisans / PhD hedefin, kariyer yönün hakkında bir-iki cümle.",
-    "crumbs": [
-      "Home",
-      "About"
-    ]
+    "section": "Connect",
+    "text": "Connect\n\nGitHub\nLinkedIn\nEmail"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Mükremin Tulgar",
     "section": "",
-    "text": "I’m passionate about Econometrics and Data Science, with strong hands-on experience in building and analyzing quantitative models — from data modelling and forecasting to machine learning and risk models. I’m proficient in Python, R, SQL, VBA.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#data-scientist-financial-analyst",
-    "href": "index.html#data-scientist-financial-analyst",
-    "title": "Mükremin Tulgar",
-    "section": "",
-    "text": "I’m passionate about Econometrics and Data Science, with strong hands-on experience in building and analyzing quantitative models — from data modelling and forecasting to machine learning and risk models. I’m proficient in Python, R, SQL, VBA.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Mükremin Tulgar",
-    "section": "Contact",
-    "text": "Contact\n\nEmail: mukremintulgar@gmail.com\nGithub : github.com/mukremintulgar\nLinkedin : linkedin.com/in/mukremin-tulgar-b6204b404",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK\n\n  Turning data intodecisions.\n\n  \n    I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.\n  \n\n  \n    Explore projects →\n    View GitHub ↗\n  \n\n  \n    \n      FOCUS\n      Data Science & Machine Learning\n    \n    \n      DOMAIN\n      Finance & Economics\n    \n    \n      TOOLS\n      Python · R · SQL\n    \n  \n\n\n\n  \n    \n      SELECTED WORK\n      Projects\n    \n    View all projects →\n  \n\n  \n    \n      \n        01\n        ↗\n      \n      FINANCIAL RISK · PYTHON\n      Monte Carlo Portfolio Stress Test\n      Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.\n      \n        Monte Carlo\n        VaR\n        Python\n      \n      \n    \n  \n\n\n\n  EXPERTISE\n  What I work with\n\n  \n    \n      01\n      Data Science\n      Data preparation, exploratory analysis, predictive modelling and model evaluation.\n    \n    \n      02\n      Econometrics\n      Time series, panel data, volatility models and quantitative economic analysis.\n    \n    \n      03\n      Financial Risk\n      Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.\n    \n    \n      04\n      Analytics\n      Python, R and SQL workflows that turn raw data into interpretable results.\n    \n  \n\n\n\n  CONTACT\n  Interested in data,markets or quantitative research?\n  I'm always open to discussing analytical projects, research and opportunities.\n  \n    Email me →\n    LinkedIn ↗"
   },
   {
     "objectID": "notebooks/monte_carlo_portfolio_stress_test.html",
