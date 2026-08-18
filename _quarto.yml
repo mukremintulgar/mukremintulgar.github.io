@@ -1,34 +1,48 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Mükremin Tulgar"
+  site-url: "https://mukremintulgar.github.io/"
+  description: "Data Analyst focused on Data Science, Econometrics and Financial Risk."
+
   navbar:
+    pinned: true
+    background: "#0A0C10"
+    foreground: "#F6F7FB"
     left:
       - href: index.qmd
         text: Home
       - href: projects.qmd
-        text: Projects 
+        text: Projects
       - href: about.qmd
         text: About
-  sidebar:
-    style: "docked"
-    contents:
-      - text: "Home"
-        href: index.qmd
-      - text: "Projects"
-        href: projects.qmd
-      - section: "Case Studies"
-        contents:
-          - monte-carlo-project.qmd
-      - text: "About"
-        href: about.qmd
+    tools:
+      - icon: github
+        href: https://github.com/mukremintulgar
+        aria-label: GitHub
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/mukremin-tulgar-b6204b404/
+        aria-label: LinkedIn
+        target: _blank
+
+  search: false
+  open-graph: true
+
+  page-footer:
+    left: "© 2026 Mükremin Tulgar"
+    right: "Built with Quarto"
+    border: true
+
 format:
   html:
-    theme:
-      - darkly
+    theme: darkly
     css: styles.css
     toc: true
+    code-copy: true
+    code-overflow: wrap
     mainfont: "Space Grotesk"
     monofont: "JetBrains Mono"
 

@@ -1,13 +1,31 @@
 ---
 title: "Projects"
-listing:
-  contents: 
-    - "*-project.qmd"
-  type: grid
-  fields: [title, description]
-  sort: "date desc"
+page-layout: full
+toc: false
 ---
 
-## [Monte Carlo Portfolio Stress Test](monte-carlo-project.qmd)
-A Monte Carlo simulation evaluating downside risk in a multi-asset portfolio, 
-with historical and simulated VaR/CVaR estimates.
+```{=html}
+<section class="page-intro">
+  <div class="section-kicker">PORTFOLIO</div>
+  <h1>Selected Projects</h1>
+  <p>Applied work across financial risk, econometrics, data analysis and quantitative modelling.</p>
+</section>
+
+<section class="project-grid project-grid-page">
+  <div class="project-card featured">
+    <div class="project-card-top">
+      <span class="project-number">01</span>
+      <span class="project-arrow">↗</span>
+    </div>
+    <div class="project-type">FINANCIAL RISK · PYTHON</div>
+    <h3>Monte Carlo Portfolio Stress Test</h3>
+    <p>Historical and simulated downside-risk analysis for a diversified portfolio.</p>
+    <div class="tag-row">
+      <span>Python</span>
+      <span>Monte Carlo</span>
+      <span>VaR/CVaR</span>
+    </div>
+    <a class="project-card-link" href="monte-carlo-project.html" aria-label="Open Monte Carlo Portfolio Stress Test"></a>
+  </div>
+</section>
+```

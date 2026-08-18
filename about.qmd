@@ -1,17 +1,24 @@
 ---
 title: "About"
+toc: false
 ---
 
-## Background
+## About Me
 
-Ekonomi/ekonometri geçmişin, eğitim yolculuğun (kısa bir paragraf).
+I work at the intersection of **data science, econometrics and financial analysis**, with a particular interest in quantitative modelling, time-series analysis and risk.
 
-## What I Work On
+My projects use tools such as **Python, R and SQL** to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis.
 
-- Financial time series (ARDL, VECM, GARCH-family models)
-- Machine learning for risk detection
-- ...
+## Areas of Interest
 
-## Where I'm Headed
+- Data Science and Machine Learning
+- Econometrics and Time Series
+- Financial Risk and Portfolio Analysis
+- Quantitative Research
+- Data Analytics and Visualization
 
-Yüksek lisans / PhD hedefin, kariyer yönün hakkında bir-iki cümle.
+## Connect
+
+- [GitHub](https://github.com/mukremintulgar)
+- [LinkedIn](https://www.linkedin.com/in/mukremin-tulgar-b6204b404/)
+- [Email](mailto:mukremintulgar@gmail.com)

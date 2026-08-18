@@ -1,11 +1,104 @@
 ---
 title: "Mükremin Tulgar"
+page-layout: full
+title-block-banner: false
+toc: false
 ---
-## Data Scientist & Financial Analyst
 
-I'm passionate about Econometrics and Data Science, with strong hands-on experience in building and analyzing quantitative models — from data modelling and forecasting to machine learning and risk models. I'm proficient in Python, R, SQL, VBA.
+```{=html}
+<section class="hero-section">
+  <div class="hero-kicker">DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK</div>
 
-## Contact
-- Email: [mukremintulgar@gmail.com](mailto:mukremintulgar@gmail.com)
-- Github : [github.com/mukremintulgar](https://github.com/mukremintulgar)
-- Linkedin : [linkedin.com/in/mukremin-tulgar-b6204b404](https://www.linkedin.com/in/mukremin-tulgar-b6204b404/)
+  <h1 class="hero-title">Turning data into<br><span>decisions.</span></h1>
+
+  <p class="hero-lead">
+    I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.
+  </p>
+
+  <div class="hero-actions">
+    <a class="portfolio-btn portfolio-btn-primary" href="projects.html">Explore projects →</a>
+    <a class="portfolio-btn portfolio-btn-secondary" href="https://github.com/mukremintulgar" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+  </div>
+
+  <div class="hero-strip">
+    <div>
+      <span class="hero-strip-label">FOCUS</span>
+      <strong>Data Science &amp; Machine Learning</strong>
+    </div>
+    <div>
+      <span class="hero-strip-label">DOMAIN</span>
+      <strong>Finance &amp; Economics</strong>
+    </div>
+    <div>
+      <span class="hero-strip-label">TOOLS</span>
+      <strong>Python · R · SQL</strong>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-section">
+  <div class="section-heading-row">
+    <div>
+      <div class="section-kicker">SELECTED WORK</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <a class="section-link" href="projects.html">View all projects →</a>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card featured">
+      <div class="project-card-top">
+        <span class="project-number">01</span>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-type">FINANCIAL RISK · PYTHON</div>
+      <h3>Monte Carlo Portfolio Stress Test</h3>
+      <p>Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.</p>
+      <div class="tag-row">
+        <span>Monte Carlo</span>
+        <span>VaR</span>
+        <span>Python</span>
+      </div>
+      <a class="project-card-link" href="monte-carlo-project.html" aria-label="Open Monte Carlo Portfolio Stress Test"></a>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-section">
+  <div class="section-kicker">EXPERTISE</div>
+  <h2 class="section-title">What I work with</h2>
+
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <span>01</span>
+      <h3>Data Science</h3>
+      <p>Data preparation, exploratory analysis, predictive modelling and model evaluation.</p>
+    </div>
+    <div class="expertise-card">
+      <span>02</span>
+      <h3>Econometrics</h3>
+      <p>Time series, panel data, volatility models and quantitative economic analysis.</p>
+    </div>
+    <div class="expertise-card">
+      <span>03</span>
+      <h3>Financial Risk</h3>
+      <p>Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.</p>
+    </div>
+    <div class="expertise-card">
+      <span>04</span>
+      <h3>Analytics</h3>
+      <p>Python, R and SQL workflows that turn raw data into interpretable results.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-section contact-section">
+  <div class="section-kicker">CONTACT</div>
+  <h2 class="contact-title">Interested in data,<br>markets or quantitative research?</h2>
+  <p>I'm always open to discussing analytical projects, research and opportunities.</p>
+  <div class="hero-actions">
+    <a class="portfolio-btn portfolio-btn-primary" href="mailto:mukremintulgar@gmail.com">Email me →</a>
+    <a class="portfolio-btn portfolio-btn-secondary" href="https://www.linkedin.com/in/mukremin-tulgar-b6204b404/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  </div>
+</section>
+```
