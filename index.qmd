@@ -1,70 +1,92 @@
 ---
-title: "Mükremin Tulgar"
+title: "Home"
 page-layout: full
-title-block-banner: false
-toc: false
 ---
 
 ```{=html}
 <section class="hero-section">
-  <div class="hero-kicker">DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK</div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-kicker">DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK</div>
 
-  <h1 class="hero-title">Turning data into<br><span>decisions.</span></h1>
+      <h1 class="hero-title">
+        Turning data into<br>
+        <span class="hero-outline">decisions.</span>
+      </h1>
 
-  <p class="hero-lead">
-    I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.
-  </p>
+      <p class="hero-text">
+        I build quantitative models for finance, economics and risk —
+        combining statistical thinking, econometrics, machine learning
+        and data science with practical analysis.
+      </p>
 
-  <div class="hero-actions">
-    <a class="portfolio-btn portfolio-btn-primary" href="projects.html">Explore projects →</a>
-    <a class="portfolio-btn portfolio-btn-secondary" href="https://github.com/mukremintulgar" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+      <div class="hero-actions">
+        <a href="projects.qmd" class="portfolio-btn portfolio-btn-primary">Explore projects →</a>
+        <a href="https://github.com/mukremintulgar" class="portfolio-btn portfolio-btn-secondary" target="_blank" rel="noopener">View GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-panel">
+      <img src="images/profile.jpg" alt="Portrait of Mükremin Tulgar" class="hero-photo">
+      <div class="hero-photo-caption">
+        <span class="hero-photo-name">Mükremin Tulgar</span>
+        <span class="hero-photo-role">Data Science · Financial Risk · Econometrics</span>
+      </div>
+    </div>
   </div>
 
-  <div class="hero-strip">
-    <div>
-      <span class="hero-strip-label">FOCUS</span>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span>FOCUS</span>
       <strong>Data Science &amp; Machine Learning</strong>
     </div>
-    <div>
-      <span class="hero-strip-label">DOMAIN</span>
+    <div class="hero-stat">
+      <span>DOMAIN</span>
       <strong>Finance &amp; Economics</strong>
     </div>
-    <div>
-      <span class="hero-strip-label">TOOLS</span>
+    <div class="hero-stat">
+      <span>TOOLS</span>
       <strong>Python · R · SQL</strong>
     </div>
   </div>
 </section>
+```
 
-<section class="portfolio-section">
-  <div class="section-heading-row">
+```{=html}
+<section class="section-shell">
+  <div class="section-header">
     <div>
       <div class="section-kicker">SELECTED WORK</div>
       <h2 class="section-title">Projects</h2>
     </div>
-    <a class="section-link" href="projects.html">View all projects →</a>
+    <a href="projects.qmd" class="section-link">View all projects →</a>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card featured">
+  <div class="project-grid single-project-grid">
+    <article class="project-card">
       <div class="project-card-top">
         <span class="project-number">01</span>
         <span class="project-arrow">↗</span>
       </div>
       <div class="project-type">FINANCIAL RISK · PYTHON</div>
       <h3>Monte Carlo Portfolio Stress Test</h3>
-      <p>Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.</p>
+      <p>
+        Downside-risk analysis of a multi-asset portfolio using historical
+        and simulated VaR/CVaR.
+      </p>
       <div class="tag-row">
         <span>Monte Carlo</span>
         <span>VaR</span>
         <span>Python</span>
       </div>
-      <a class="project-card-link" href="monte-carlo-project.html" aria-label="Open Monte Carlo Portfolio Stress Test"></a>
-    </div>
+      <a class="project-card-link" href="monte-carlo-project.qmd">Open project</a>
+    </article>
   </div>
 </section>
+```
 
-<section class="portfolio-section">
+```{=html}
+<section class="section-shell">
   <div class="section-kicker">EXPERTISE</div>
   <h2 class="section-title">What I work with</h2>
 
@@ -74,31 +96,24 @@ toc: false
       <h3>Data Science</h3>
       <p>Data preparation, exploratory analysis, predictive modelling and model evaluation.</p>
     </div>
+
     <div class="expertise-card">
       <span>02</span>
       <h3>Econometrics</h3>
       <p>Time series, panel data, volatility models and quantitative economic analysis.</p>
     </div>
+
     <div class="expertise-card">
       <span>03</span>
       <h3>Financial Risk</h3>
       <p>Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.</p>
     </div>
+
     <div class="expertise-card">
       <span>04</span>
       <h3>Analytics</h3>
       <p>Python, R and SQL workflows that turn raw data into interpretable results.</p>
     </div>
-  </div>
-</section>
-
-<section class="portfolio-section contact-section">
-  <div class="section-kicker">CONTACT</div>
-  <h2 class="contact-title">Interested in data,<br>markets or quantitative research?</h2>
-  <p>I'm always open to discussing analytical projects, research and opportunities.</p>
-  <div class="hero-actions">
-    <a class="portfolio-btn portfolio-btn-primary" href="mailto:mukremintulgar@gmail.com">Email me →</a>
-    <a class="portfolio-btn portfolio-btn-secondary" href="https://www.linkedin.com/in/mukremin-tulgar-b6204b404/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
   </div>
 </section>
 ```
