@@ -11,7 +11,7 @@
     "href": "monte-carlo-project.html",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "",
-    "text": "← Back to projects\n\n    FINANCIAL RISK · PYTHON · MONTE CARLO\n\n    \n\n    \n      Measuring downside risk in a diversified equity–bond–gold portfolio\n      using historical tail-risk estimates and a parametric Monte Carlo baseline.\n    \n\n    \n      \n        View repository ↗\n      \n      \n        GitHub profile ↗\n      \n    \n\n    \n      \n        PORTFOLIO\n        SPY 50% · IEF 30% · GLD 20%\n      \n      \n        SAMPLE\n        2015–2025\n      \n      \n        SIMULATION\n        10,000 scenarios · 99%"
+    "text": "← Back to projects\n\n    FINANCIAL RISK · PYTHON · MONTE CARLO\n\n    \n\n    \n      Measuring downside risk in a diversified equity–bond–gold portfolio\n      using historical tail-risk estimates and a parametric Monte Carlo baseline.\n    \n\n    \n      \n        View notebook ↗\n      \n      \n        GitHub profile ↗\n      \n    \n\n    \n      \n        PORTFOLIO\n        SPY 50% · IEF 30% · GLD 20%\n      \n      \n        SAMPLE\n        2015–2025\n      \n      \n        SIMULATION\n        10,000 scenarios · 99%"
   },
   {
     "objectID": "monte-carlo-project.html#overview",
@@ -46,14 +46,14 @@
     "href": "monte-carlo-project.html#technical-implementation",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Technical Implementation",
-    "text": "Technical Implementation\n\n  \n    REPRODUCIBLE WORKFLOW\n    The analytical story is summarized here; the full code remains in the repository.\n    \n      To keep the project page clean, the implementation details and notebook code\n      are kept outside the main narrative. You can inspect the complete workflow directly on GitHub.\n    \n  \n  \n    Open repository ↗\n  \n\n\n  \n    Libraries\n    Python, NumPy, Pandas, Matplotlib, yfinance\n  \n  \n    Risk metrics\n    Historical VaR, Historical CVaR, Monte Carlo VaR, Monte Carlo CVaR\n  \n  \n    Workflow\n    Data download → log returns → portfolio returns → risk estimation → interpretation"
+    "text": "Technical Implementation\n\n  \n    REPRODUCIBLE WORKFLOW\n    The analytical story is summarized here; the full code remains in the repository.\n    \n      To keep the project page clean, the implementation details and notebook code\n      are kept outside the main narrative. You can inspect the complete workflow directly on GitHub.\n    \n  \n  \n    Open notebook ↗\n  \n\n\n  \n    Libraries\n    Python, NumPy, Pandas, Matplotlib, yfinance\n  \n  \n    Risk metrics\n    Historical VaR, Historical CVaR, Monte Carlo VaR, Monte Carlo CVaR\n  \n  \n    Workflow\n    Data download → log returns → portfolio returns → risk estimation → interpretation"
   },
   {
     "objectID": "monte-carlo-project.html#conclusion",
     "href": "monte-carlo-project.html#conclusion",
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Conclusion",
-    "text": "Conclusion\nThe project demonstrates a transparent workflow for moving from market prices to portfolio returns, historical tail-risk estimation and Monte Carlo stress testing.\nThe key comparison is between realized historical losses and a normal-distribution simulation baseline. Historical VaR and especially historical CVaR are larger, indicating that the simple parametric model does not fully reproduce the severity of downside observations present in the historical sample.\nA natural next step would be to extend the framework with fat-tailed distributions, time-varying volatility, dynamic correlations, multi-day risk horizons and explicit historical crisis scenarios.\n\n  EXPLORE THE CODE\n  Want to inspect the full workflow?\n  \n    \n      View repository ↗\n    \n    \n      Back to projects"
+    "text": "Conclusion\nThe project demonstrates a transparent workflow for moving from market prices to portfolio returns, historical tail-risk estimation and Monte Carlo stress testing.\nThe key comparison is between realized historical losses and a normal-distribution simulation baseline. Historical VaR and especially historical CVaR are larger, indicating that the simple parametric model does not fully reproduce the severity of downside observations present in the historical sample.\nA natural next step would be to extend the framework with fat-tailed distributions, time-varying volatility, dynamic correlations, multi-day risk horizons and explicit historical crisis scenarios.\n\n  EXPLORE THE CODE\n  Want to inspect the full workflow?\n  \n    \n      View notebook ↗\n    \n    \n      Back to projects"
   },
   {
     "objectID": "about.html",
