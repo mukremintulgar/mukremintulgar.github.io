@@ -4,14 +4,14 @@
   --amber: #F2A93B;
   --amber-soft: rgba(242, 169, 59, 0.12);
   --teal: #4FB6AD;
-  --bg: #0A0C10;
+  --bg: #100e0b;
   --panel: #10141B;
   --panel-2: #131924;
   --line: #222834;
   --text: #F3F5F7;
   --muted: #9AA3AF;
   --muted-2: #6F7885;
-  --max-width: 1180px;
+  --max-width: 1380px;
 }
 
 html {
@@ -20,17 +20,15 @@ html {
 
 body {
   font-family: 'Space Grotesk', sans-serif;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(79, 182, 173, 0.07), transparent 28rem),
-    radial-gradient(circle at 10% 20%, rgba(242, 169, 59, 0.05), transparent 24rem),
-    var(--bg) !important;
+  background-color: #100e0b !important;
+  background-image: none !important;
   color: var(--text);
 }
 
 /* ---------- Quarto shell ---------- */
 
 .navbar {
-  background: rgba(10, 12, 16, 0.90) !important;
+  background: rgba(16, 14, 11, 0.78) !important;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255,255,255,0.07);
@@ -115,11 +113,11 @@ p {
 .hero-section {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(5.5rem, 10vw, 9rem) 1.5rem 4.5rem;
-  min-height: calc(92vh - 66px);
+  padding: clamp(3rem, 5vw, 4.5rem) 1.5rem 4.5rem;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .hero-kicker,
@@ -1211,5 +1209,283 @@ pre, code {
     margin-right: 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+}
+/* =========================================================
+   Ashen Nebula — site-wide Aura background
+   Base color lives on BODY. The aura container stays transparent.
+   ========================================================= */
+
+.aura-bg {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  pointer-events: none;
+
+  /* Critical: NO background-color here.
+     mix-blend-mode must composite against body #100e0b. */
+  background: transparent !important;
+}
+
+/* Decorative layers */
+.aura-layer-1,
+.aura-layer-2,
+.aura-layer-3 {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Layer 1 */
+.aura-layer-1 {
+  background:
+    radial-gradient(
+      ellipse 42% 48% at 30% 40%,
+      rgba(148, 163, 184, 0.50) 0%,
+      transparent 65%
+    );
+  filter: blur(138px);
+}
+
+/* Layer 2 */
+.aura-layer-2 {
+  background:
+    radial-gradient(
+      ellipse 35% 40% at 68% 55%,
+      rgba(100, 116, 139, 0.45) 0%,
+      transparent 60%
+    );
+  filter: blur(150px);
+}
+
+/* Layer 3 */
+.aura-layer-3 {
+  background:
+    radial-gradient(
+      ellipse 25% 30% at 50% 80%,
+      rgba(71, 85, 105, 0.40) 0%,
+      transparent 55%
+    );
+  filter: blur(113px);
+}
+
+/* Quarto/Bootstrap surfaces must remain transparent,
+   otherwise they cover the nebula. */
+#quarto-content,
+main.content,
+.page-columns,
+.page-layout-full,
+.content,
+.quarto-container,
+#quarto-document-content {
+  background: transparent !important;
+}
+
+/* Real site content paints above the decorative aura layers. */
+#quarto-header,
+#quarto-content,
+.nav-footer,
+footer {
+  position: relative;
+}
+
+#quarto-header {
+  z-index: 10;
+}
+
+#quarto-content,
+.nav-footer,
+footer {
+  z-index: 1;
+}
+
+/* Keep cards readable while allowing the aura to remain visible. */
+.project-card,
+.expertise-card,
+.case-intro-card,
+.allocation-card,
+.method-card,
+.result-card,
+.implementation-intro,
+.project-end-cta,
+.hero-photo-panel,
+.analysis-note,
+.tech-box {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Desktop blur values from the Ashen Nebula specification. */
+@media (min-width: 768px) {
+  .aura-layer-1 {
+    filter: blur(198px);
+  }
+
+  .aura-layer-2 {
+    filter: blur(216px);
+  }
+
+  .aura-layer-3 {
+    filter: blur(162px);
+  }
+}
+
+/* Accessibility: decorative animation/painting only. */
+@media (prefers-reduced-motion: reduce) {
+  .aura-layer-1,
+  .aura-layer-2,
+  .aura-layer-3 {
+    will-change: auto;
+  }
+}
+/* =========================================================
+   Navbar refinement — icons + improved positioning
+   ========================================================= */
+
+.navbar {
+  min-height: 72px;
+}
+
+.navbar .container-fluid {
+  width: min(94vw, var(--max-width));
+  max-width: var(--max-width);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.navbar-brand {
+  margin-right: 2.2rem;
+  font-size: 1rem;
+}
+
+.navbar-nav {
+  gap: 0.25rem;
+}
+
+.navbar-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  padding: 0.55rem 0.72rem !important;
+  border-radius: 6px;
+  transition:
+    color .18s ease,
+    background-color .18s ease,
+    transform .18s ease;
+}
+
+.navbar-nav .nav-link .bi {
+  font-size: 0.92rem;
+  opacity: 0.78;
+}
+
+.navbar-nav .nav-link:hover {
+  background: rgba(255,255,255,0.035);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active {
+  background: rgba(242,169,59,0.07);
+}
+
+.navbar-nav .nav-link.active .bi,
+.navbar-nav .nav-link:hover .bi {
+  color: var(--amber);
+  opacity: 1;
+}
+
+.navbar .quarto-navbar-tools {
+  gap: 0.25rem;
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+/* =========================================================
+   Blog landing page
+   ========================================================= */
+
+.blog-shell {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 5vw, 4.5rem) 1.5rem 6rem;
+}
+
+.blog-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  color: var(--amber);
+}
+
+.blog-title {
+  max-width: 920px;
+  margin: 0.9rem 0 1.1rem;
+  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.blog-lead {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.7;
+}
+
+.blog-divider {
+  margin: 3.2rem 0 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.blog-ready-card {
+  max-width: 720px;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.015);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.blog-ready-card span {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+  color: var(--amber);
+}
+
+.blog-ready-card p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-right: 0.5rem;
+  }
+
+  .hero-section,
+  .blog-shell {
+    padding-top: 2.6rem;
   }
 }

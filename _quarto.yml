@@ -9,15 +9,21 @@ website:
 
   navbar:
     pinned: true
-    background: "#0A0C10"
+    background: "#100e0b"
     foreground: "#F6F7FB"
     left:
       - href: index.qmd
         text: Home
+        icon: house
       - href: projects.qmd
         text: Projects
+        icon: grid
+      - href: blog.qmd
+        text: Blog
+        icon: journal-text
       - href: about.qmd
         text: About
+        icon: person
     tools:
       - icon: github
         href: https://github.com/mukremintulgar
@@ -40,6 +46,7 @@ format:
   html:
     theme: darkly
     css: styles.css
+    include-before-body: aura.html
     toc: true
     code-copy: true
     code-overflow: wrap

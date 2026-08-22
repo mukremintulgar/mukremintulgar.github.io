@@ -1,0 +1,29 @@
+---
+title: "Blog"
+page-layout: full
+toc: false
+---
+
+```{=html}
+<section class="blog-shell">
+  <div class="blog-kicker">BLOG · NOTES · EXPLAINERS</div>
+
+  <h1 class="blog-title">Notes from the models.</h1>
+
+  <p class="blog-lead">
+    A space for writing about data science, machine learning, econometrics,
+    financial risk and the ideas behind my projects.
+  </p>
+
+  <div class="blog-divider"></div>
+
+  <div class="blog-ready-card">
+    <span>COMING NEXT</span>
+    <p>
+      This page is ready for future articles. When the first posts are added,
+      it can be converted into an automatic Quarto listing with tags, dates
+      and categories.
+    </p>
+  </div>
+</section>
+```

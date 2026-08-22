@@ -7,13 +7,6 @@
     "text": "PORTFOLIO\n  Selected Projects\n  Applied work across financial risk, econometrics, data analysis and quantitative modelling.\n\n\n\n  \n    \n      01\n      ↗\n    \n    FINANCIAL RISK · PYTHON\n    Monte Carlo Portfolio Stress Test\n    Historical and simulated downside-risk analysis for a diversified portfolio.\n    \n      Python\n      Monte Carlo\n      VaR/CVaR"
   },
   {
-    "objectID": "monte-carlo-project.html",
-    "href": "monte-carlo-project.html",
-    "title": "Monte Carlo Portfolio Stress Test",
-    "section": "",
-    "text": "← Back to projects\n\n    FINANCIAL RISK · PYTHON · MONTE CARLO\n\n    \n\n    \n      Measuring downside risk in a diversified equity–bond–gold portfolio\n      using historical tail-risk estimates and a parametric Monte Carlo baseline.\n    \n\n    \n      \n        View notebook ↗\n      \n      \n        GitHub profile ↗\n      \n    \n\n    \n      \n        PORTFOLIO\n        SPY 50% · IEF 30% · GLD 20%\n      \n      \n        SAMPLE\n        2015–2025\n      \n      \n        SIMULATION\n        10,000 scenarios · 99%"
-  },
-  {
     "objectID": "monte-carlo-project.html#overview",
     "href": "monte-carlo-project.html#overview",
     "title": "Monte Carlo Portfolio Stress Test",
@@ -56,18 +49,18 @@
     "text": "Conclusion\nThe project demonstrates a transparent workflow for moving from market prices to portfolio returns, historical tail-risk estimation and Monte Carlo stress testing.\nThe key comparison is between realized historical losses and a normal-distribution simulation baseline. Historical VaR and especially historical CVaR are larger, indicating that the simple parametric model does not fully reproduce the severity of downside observations present in the historical sample.\nA natural next step would be to extend the framework with fat-tailed distributions, time-varying volatility, dynamic correlations, multi-day risk horizons and explicit historical crisis scenarios.\n\n  EXPLORE THE CODE\n  Want to inspect the full workflow?\n  \n    \n      View notebook ↗\n    \n    \n      Back to projects"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
+    "text": "BLOG · NOTES · EXPLAINERS\n\n  Notes from the models.\n\n  \n    A space for writing about data science, machine learning, econometrics,\n    financial risk and the ideas behind my projects.\n  \n\n  \n\n  \n    COMING NEXT\n    \n      This page is ready for future articles. When the first posts are added,\n      it can be converted into an automatic Quarto listing with tags, dates\n      and categories."
   },
   {
     "objectID": "about.html#about-me",
     "href": "about.html#about-me",
     "title": "About",
-    "section": "",
-    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
+    "section": "About Me",
+    "text": "About Me\nI work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
   },
   {
     "objectID": "about.html#areas-of-interest",
