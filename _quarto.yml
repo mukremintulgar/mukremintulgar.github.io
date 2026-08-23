@@ -14,10 +14,16 @@ website:
     left:
       - href: index.qmd
         text: Home
+        icon: house
       - href: projects.qmd
         text: Projects
+        icon: grid
+      - href: blog.qmd
+        text: Blog
+        icon: journal-text
       - href: about.qmd
         text: About
+        icon: person
     tools:
       - icon: github
         href: https://github.com/mukremintulgar

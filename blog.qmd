@@ -4,26 +4,9 @@ page-layout: full
 toc: false
 ---
 
-```{=html}
-<section class="blog-shell">
-  <div class="blog-kicker">BLOG · NOTES · EXPLAINERS</div>
+## Blog
 
-  <h1 class="blog-title">Notes from the models.</h1>
+Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.
 
-  <p class="blog-lead">
-    A space for writing about data science, machine learning, econometrics,
-    financial risk and the ideas behind my projects.
-  </p>
+*Articles will be added here soon.*
 
-  <div class="blog-divider"></div>
-
-  <div class="blog-ready-card">
-    <span>COMING NEXT</span>
-    <p>
-      This page is ready for future articles. When the first posts are added,
-      it can be converted into an automatic Quarto listing with tags, dates
-      and categories.
-    </p>
-  </div>
-</section>
-```
