@@ -7,17 +7,29 @@ toc: false
 
 ```{=html}
 <section class="hero-section">
-  <div class="hero-kicker">DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK</div>
+  <div class="hero-main">
+    <div class="hero-copy">
+      <div class="hero-kicker">DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK</div>
 
-  <h1 class="hero-title">Turning data into<br><span>decisions.</span></h1>
+      <h1 class="hero-title">Turning data into<br><span>decisions.</span></h1>
 
-  <p class="hero-lead">
-    I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.
-  </p>
+      <p class="hero-lead">
+        I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.
+      </p>
 
-  <div class="hero-actions">
-    <a class="portfolio-btn portfolio-btn-primary" href="projects.html">Explore projects →</a>
-    <a class="portfolio-btn portfolio-btn-secondary" href="https://github.com/mukremintulgar" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+      <div class="hero-actions">
+        <a class="portfolio-btn portfolio-btn-primary" href="projects.html">Explore projects →</a>
+        <a class="portfolio-btn portfolio-btn-secondary" href="https://github.com/mukremintulgar" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-card">
+      <img src="images/profile.jpg" alt="Portrait of Mükremin Tulgar" class="hero-photo">
+      <div class="hero-photo-caption">
+        <div class="hero-photo-name">Mükremin Tulgar</div>
+        <div class="hero-photo-role">Data Science · Machine Learning · Financial Risk</div>
+      </div>
+    </div>
   </div>
 
   <div class="hero-strip">

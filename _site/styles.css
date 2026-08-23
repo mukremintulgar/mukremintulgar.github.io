@@ -569,3 +569,123 @@ pre, code {
   position: relative;
   z-index: 2;
 }
+/* ---------- Hero photo: first-design compatible ---------- */
+
+.hero-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.65fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-photo-card {
+  width: 100%;
+  max-width: 340px;
+  justify-self: end;
+  padding: 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.028),
+    rgba(255,255,255,0.012)
+  );
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo-card {
+    animation: reveal .7s .18s both;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-card {
+    justify-self: start;
+    max-width: 300px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-photo-card {
+    max-width: 240px;
+  }
+}
+/* ---------- Enlarged profile card ---------- */
+
+.hero-photo-card {
+  max-width: 430px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.032), rgba(255,255,255,0.012));
+  box-shadow:
+    0 20px 55px rgba(0,0,0,0.26),
+    inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.hero-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 7px;
+}
+
+.hero-photo-caption {
+  padding: 1rem 0.25rem 0.15rem;
+}
+
+.hero-photo-name {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero-photo-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+/* Give the image a little more room without changing the
+   original hero structure. */
+.hero-main {
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr);
+}
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-card {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-photo-card {
+    max-width: 310px;
+  }
+}
+
