@@ -60,7 +60,14 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "BLOG · NOTES · EXPLAINERS\n\n  Notes from the models.\n\n  \n    A space for writing about data science, machine learning, econometrics,\n    financial risk and the ideas behind my projects.\n  \n\n  \n\n  \n    COMING NEXT\n    \n      This page is ready for future articles. When the first posts are added,\n      it can be converted into an automatic Quarto listing with tags, dates\n      and categories."
+    "text": "Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.\nArticles will be added here soon."
+  },
+  {
+    "objectID": "blog.html#blog",
+    "href": "blog.html#blog",
+    "title": "Blog",
+    "section": "",
+    "text": "Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.\nArticles will be added here soon."
   },
   {
     "objectID": "about.html",
