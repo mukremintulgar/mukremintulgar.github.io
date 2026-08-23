@@ -23,9 +23,15 @@ toc: false
       </div>
     </div>
 
-    <div class="hero-photo-card">
-      <img src="images/profile.jpg" alt="Portrait of Mükremin Tulgar" class="hero-photo">
-      <div class="hero-photo-caption">
+    <div class="hero-lanyard-card">
+      <iframe
+        class="hero-lanyard-frame"
+        src="lanyard-widget/dist/index.html"
+        title="Interactive 3D lanyard for Mükremin Tulgar"
+        loading="eager"
+        allow="fullscreen"
+      ></iframe>
+      <div class="hero-lanyard-caption">
         <div class="hero-photo-name">Mükremin Tulgar</div>
         <div class="hero-photo-role">Data Science · Machine Learning · Financial Risk</div>
       </div>
