@@ -569,3 +569,274 @@ pre, code {
   position: relative;
   z-index: 2;
 }
+/* ---------- Hero photo: first-design compatible ---------- */
+
+.hero-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.65fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-photo-card {
+  width: 100%;
+  max-width: 340px;
+  justify-self: end;
+  padding: 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.028),
+    rgba(255,255,255,0.012)
+  );
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo-card {
+    animation: reveal .7s .18s both;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-card {
+    justify-self: start;
+    max-width: 300px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-photo-card {
+    max-width: 240px;
+  }
+}
+/* ---------- Enlarged profile card ---------- */
+
+.hero-photo-card {
+  max-width: 430px;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.032), rgba(255,255,255,0.012));
+  box-shadow:
+    0 20px 55px rgba(0,0,0,0.26),
+    inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.hero-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 7px;
+}
+
+.hero-photo-caption {
+  padding: 1rem 0.25rem 0.15rem;
+}
+
+.hero-photo-name {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero-photo-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+/* Give the image a little more room without changing the
+   original hero structure. */
+.hero-main {
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr);
+}
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo-card {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-photo-card {
+    max-width: 310px;
+  }
+}
+/* =========================================================
+   CONTINUOUS PAGE BACKGROUND FIX
+   Removes visible horizontal bands between Quarto sections.
+   Add this at the VERY END of styles.css
+   ========================================================= */
+
+html {
+  background: #0A0C10;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: transparent !important;
+}
+
+/* One continuous, fixed background for the whole website */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 78% 12%,
+      rgba(79, 182, 173, 0.07),
+      transparent 34rem
+    ),
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(242, 169, 59, 0.055),
+      transparent 30rem
+    ),
+    #0A0C10;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Quarto wrappers must not paint separate rectangular backgrounds */
+#quarto-content,
+#quarto-document-content,
+main.content,
+.page-columns,
+.page-layout-full,
+.content,
+.quarto-container,
+.quarto-title-block {
+  background: transparent !important;
+}
+
+/* Portfolio sections should flow over the same background */
+.hero-section,
+.portfolio-section,
+.page-intro,
+.project-grid-page {
+  background: transparent !important;
+}
+
+/* Keep intentional card surfaces only */
+.project-card,
+.hero-photo-card,
+.expertise-card {
+  position: relative;
+}
+
+/* Footer can remain slightly darker but without a hard top color jump */
+.nav-footer {
+  background: rgba(9, 11, 14, 0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}/* =========================================================
+   SUBTLE SECTION TRANSITIONS
+   Keep continuous background, but make sections readable.
+   Add this AFTER the previous background fix.
+   ========================================================= */
+
+.hero-section,
+.section-shell {
+  position: relative;
+}
+
+/* Soft divider at the start of each content section */
+.section-shell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(92%, 1180px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.08) 18%,
+    rgba(242,169,59,0.16) 50%,
+    rgba(255,255,255,0.08) 82%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Very subtle local lighting at the top of each section */
+.section-shell {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.014) 0%,
+      rgba(255,255,255,0.006) 5rem,
+      transparent 13rem
+    ) !important;
+}
+
+/* Slightly stronger separation immediately after hero */
+.hero-section + .section-shell::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(79,182,173,0.10) 20%,
+    rgba(242,169,59,0.22) 50%,
+    rgba(79,182,173,0.10) 80%,
+    transparent 100%
+  );
+}
+
+/* Add visual breathing room without creating a hard band */
+.section-shell {
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+/* Keep mobile transition visible but lighter */
+@media (max-width: 768px) {
+  .section-shell::before {
+    width: 88%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.09),
+      rgba(242,169,59,0.14),
+      rgba(255,255,255,0.09),
+      transparent
+    );
+  }
+
+  .section-shell {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
