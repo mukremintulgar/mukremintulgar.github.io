@@ -840,3 +840,369 @@ main.content,
     padding-bottom: 3.75rem;
   }
 }
+/* =========================================================
+   BLOG
+   ========================================================= */
+
+.blog-hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem clamp(4rem, 7vw, 6rem);
+}
+
+.blog-kicker,
+.blog-section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+}
+
+.blog-title {
+  max-width: 900px;
+  margin: 0.9rem 0 1.2rem;
+  font-size: clamp(3.8rem, 8vw, 7.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.blog-lead {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.blog-index-heading {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.blog-index-heading > div {
+  padding-top: 2rem;
+}
+
+.blog-index-heading h2 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+/* Quarto listing */
+#listing-listing {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+.quarto-listing {
+  margin-top: 0 !important;
+}
+
+.quarto-listing .list-grid {
+  gap: 1rem;
+}
+
+.quarto-listing .card {
+  overflow: hidden;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.025),
+      rgba(255,255,255,0.010)
+    ) !important;
+  box-shadow: none !important;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.quarto-listing .card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(242,169,59,0.35) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.035),
+      rgba(242,169,59,0.025)
+    ) !important;
+}
+
+.quarto-listing .card-img-top {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.quarto-listing .card-body {
+  padding: 1.3rem 1.35rem 1.45rem;
+}
+
+.quarto-listing .listing-title {
+  margin-bottom: 0.65rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.quarto-listing .listing-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.quarto-listing .listing-description {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.quarto-listing .listing-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted-2);
+}
+
+.quarto-listing .listing-categories {
+  margin-top: 1rem;
+}
+
+.quarto-listing .listing-category {
+  padding: 0.28rem 0.48rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  background: transparent;
+}
+
+/* Individual article pages */
+.quarto-title-block .title {
+  letter-spacing: -0.045em;
+}
+
+.quarto-title-block .description {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    padding-top: 4rem;
+  }
+
+  #listing-listing,
+  .blog-index-heading {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* =========================================================
+   ABOUT PAGE — two-column profile layout
+   Add this at the END of styles.css
+   ========================================================= */
+
+.about-shell {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem clamp(5rem, 8vw, 7rem);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  gap: clamp(3rem, 7vw, 6.5rem);
+  align-items: start;
+}
+
+.about-copy {
+  max-width: 780px;
+}
+
+.about-kicker {
+  margin-bottom: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  color: var(--amber);
+}
+
+.about-title {
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.about-copy > p {
+  max-width: 760px;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.about-copy > p strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-section {
+  margin-top: 2.8rem;
+}
+
+.about-section h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  letter-spacing: -0.035em;
+}
+
+.about-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.about-list li {
+  margin: 0.45rem 0;
+  line-height: 1.5;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.about-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.68rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.about-links a:hover {
+  color: var(--text);
+  border-color: rgba(242,169,59,0.35);
+  background: rgba(242,169,59,0.045);
+  transform: translateY(-2px);
+}
+
+/* Profile card */
+
+.about-photo-card {
+  position: sticky;
+  top: 6.5rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.028),
+      rgba(255,255,255,0.012)
+    );
+  box-shadow: 0 24px 60px rgba(0,0,0,0.26);
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.about-photo-meta {
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-photo-meta strong {
+  display: block;
+  margin-bottom: 0.38rem;
+  color: var(--text);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.about-photo-meta span {
+  display: block;
+  color: var(--muted-2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo-card {
+    position: relative;
+    top: auto;
+    max-width: 430px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+/* =========================================================
+   KAGGLE NAVBAR ICON
+   Quarto/Bootstrap has no official Kaggle brand icon.
+   This turns the Kaggle nav item's "K" into a compact icon.
+   ========================================================= */
+
+.navbar a[href="https://www.kaggle.com/mukremintulgar"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 !important;
+  margin-left: 0.15rem;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--muted) !important;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.navbar a[href="https://www.kaggle.com/mukremintulgar"]:hover {
+  color: #20BEFF !important;
+  background: rgba(32, 190, 255, 0.07);
+  transform: translateY(-1px);
+}

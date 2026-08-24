@@ -1,24 +1,65 @@
 ---
 title: "About"
+page-layout: full
 toc: false
 ---
 
-## About Me
+```{=html}
+<section class="about-shell">
+  <div class="about-grid">
 
-I work at the intersection of **data science, econometrics and financial analysis**, with a particular interest in quantitative modelling, time-series analysis and risk.
+    <div class="about-copy">
+      <div class="about-kicker">ABOUT · PROFILE</div>
 
-My projects use tools such as **Python, R and SQL** to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis.
+      <h1 class="about-title">About Me</h1>
 
-## Areas of Interest
+      <p>
+        I work at the intersection of <strong>data science, econometrics and financial analysis</strong>,
+        with a particular interest in quantitative modelling, time-series analysis and risk.
+      </p>
 
-- Data Science and Machine Learning
-- Econometrics and Time Series
-- Financial Risk and Portfolio Analysis
-- Quantitative Research
-- Data Analytics and Visualization
+      <p>
+        My projects use tools such as <strong>Python, R and SQL</strong> to move from raw data to
+        interpretable results, with an emphasis on clear methodology and reproducible analysis.
+      </p>
 
-## Connect
+      <div class="about-section">
+        <h2>Areas of Interest</h2>
 
-- [GitHub](https://github.com/mukremintulgar)
-- [LinkedIn](https://www.linkedin.com/in/mukremin-tulgar-b6204b404/)
-- [Email](mailto:mukremintulgar@gmail.com)
+        <ul class="about-list">
+          <li>Data Science and Machine Learning</li>
+          <li>Econometrics and Time Series</li>
+          <li>Financial Risk and Portfolio Analysis</li>
+          <li>Quantitative Research</li>
+          <li>Data Analytics and Visualization</li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <h2>Connect</h2>
+
+        <div class="about-links">
+          <a href="https://github.com/mukremintulgar" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/mukremin-tulgar-b6204b404/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://www.kaggle.com/mukremintulgar" target="_blank" rel="noopener">Kaggle ↗</a>
+          <a href="mailto:">Email ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="about-photo-card">
+      <img
+        src="images/profile.jpg"
+        alt="Portrait of Mükremin Tulgar"
+        class="about-photo"
+      >
+
+      <div class="about-photo-meta">
+        <strong>Mükremin Tulgar</strong>
+        <span>Data Science · Econometrics · Financial Risk</span>
+      </div>
+    </aside>
+
+  </div>
+</section>
+```

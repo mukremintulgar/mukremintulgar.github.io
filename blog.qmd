@@ -2,10 +2,35 @@
 title: "Blog"
 page-layout: full
 toc: false
+listing:
+  contents: "posts/*.qmd"
+  type: grid
+  sort: "date desc"
+  fields: [image, date, title, description, categories]
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  page-size: 9
 ---
 
-## Blog
+```{=html}
+<section class="blog-hero">
+  <div class="blog-kicker">WRITING · NOTES · EXPLAINERS</div>
 
-Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.
+  <h1 class="blog-title">
+    Notes from the models.
+  </h1>
 
-*Articles will be added here soon.*
+  <p class="blog-lead">
+    Writing on data science, machine learning, econometrics,
+    financial risk and the ideas behind my projects.
+  </p>
+</section>
+
+<section class="blog-index-heading">
+  <div>
+    <span class="blog-section-label">LATEST</span>
+    <h2>Articles</h2>
+  </div>
+</section>
+```

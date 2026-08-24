@@ -1,0 +1,46 @@
+---
+title: "Your article title"
+description: "One or two sentences explaining what this article is about."
+author: "Mükremin Tulgar"
+date: 2026-08-24
+categories:
+  - Econometrics
+  - Data Science
+image: "../images/blog-placeholder.jpg"
+draft: true
+---
+
+## Introduction
+
+Start with the question, problem, or idea you want to explain.
+
+## Why it matters
+
+Explain why the topic is useful or relevant.
+
+## Analysis
+
+Write the main technical content here.
+
+You can use equations:
+
+$$
+y_t = \beta_0 + \beta_1 x_t + \varepsilon_t
+$$
+
+You can also include code:
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+df.head()
+```
+
+## Interpretation
+
+Explain the result in plain language.
+
+## Conclusion
+
+Summarize the main takeaway and, if relevant, mention limitations or next steps.

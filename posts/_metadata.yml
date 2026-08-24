@@ -1,0 +1,10 @@
+page-layout: article
+toc: true
+toc-title: "On this page"
+toc-depth: 2
+anchor-sections: false
+
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
