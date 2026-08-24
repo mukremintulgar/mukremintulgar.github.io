@@ -24,7 +24,7 @@ website:
       - href: about.qmd
         text: About
         icon: person
-    right:
+    tools:
       - icon: github
         href: https://github.com/mukremintulgar
         aria-label: GitHub
@@ -33,7 +33,7 @@ website:
         href: https://www.linkedin.com/in/mukremin-tulgar-b6204b404/
         aria-label: LinkedIn
         target: _blank
-      - text: "K"
+      - icon: graph-up-arrow
         href: https://www.kaggle.com/mukremintulgar
         aria-label: Kaggle
         target: _blank

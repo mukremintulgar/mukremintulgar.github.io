@@ -12,19 +12,39 @@
   --muted: #9AA3AF;
   --muted-2: #6F7885;
   --max-width: 1180px;
+
+  --motion-fast: 160ms;
+  --motion-base: 220ms;
+  --motion-slow: 700ms;
+  --ease-ui: cubic-bezier(.2,.8,.2,1);
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   font-family: 'Space Grotesk', sans-serif;
-  background:
-    radial-gradient(circle at 80% 10%, rgba(79, 182, 173, 0.07), transparent 28rem),
-    radial-gradient(circle at 10% 20%, rgba(242, 169, 59, 0.05), transparent 24rem),
-    var(--bg) !important;
   color: var(--text);
+  background: transparent !important;
+}
+
+/* One continuous page background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(79, 182, 173, 0.07), transparent 34rem),
+    radial-gradient(circle at 12% 18%, rgba(242, 169, 59, 0.055), transparent 30rem),
+    var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* ---------- Quarto shell ---------- */
@@ -54,11 +74,19 @@ body {
   font-size: 0.78rem;
   letter-spacing: 0.03em;
   color: #B8C0CB !important;
+  transition:
+    color var(--motion-fast) var(--ease-ui),
+    background var(--motion-fast) var(--ease-ui),
+    transform var(--motion-fast) var(--ease-ui);
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--amber) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  transform: translateY(-1px);
 }
 
 .navbar .quarto-navbar-tools .quarto-navigation-tool {
@@ -69,10 +97,18 @@ body {
   color: var(--amber);
 }
 
-#quarto-content {
-  padding-top: 0;
+#quarto-content,
+#quarto-document-content,
+main.content,
+.page-columns,
+.page-layout-full,
+.content,
+.quarto-container,
+.quarto-title-block {
+  background: transparent !important;
 }
 
+#quarto-content,
 main.content {
   padding-top: 0;
 }
@@ -120,6 +156,18 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: transparent !important;
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
 }
 
 .hero-kicker,
@@ -171,7 +219,10 @@ p {
   font-size: 0.78rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  transition:
+    transform var(--motion-fast) var(--ease-ui),
+    border-color var(--motion-fast) var(--ease-ui),
+    background var(--motion-fast) var(--ease-ui);
 }
 
 .portfolio-btn:hover {
@@ -233,13 +284,83 @@ p {
   font-weight: 500;
 }
 
+/* ---------- Hero photo ---------- */
+
+.hero-photo-card {
+  width: 100%;
+  max-width: 430px;
+  justify-self: end;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.032),
+    rgba(255,255,255,0.012)
+  );
+  box-shadow:
+    0 20px 55px rgba(0,0,0,0.26),
+    inset 0 1px 0 rgba(255,255,255,0.025);
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 7px;
+}
+
+.hero-photo-caption {
+  padding: 1rem 0.25rem 0.15rem;
+}
+
+.hero-photo-name {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero-photo-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
 /* ---------- Sections ---------- */
 
 .portfolio-section {
+  position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 5.5rem 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.055);
+  background: transparent !important;
+}
+
+.portfolio-section::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: min(88%, var(--max-width));
+  height: 1px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79,182,173,0.08) 24%,
+    rgba(242,169,59,0.15) 50%,
+    rgba(79,182,173,0.08) 76%,
+    transparent
+  );
 }
 
 .section-heading-row {
@@ -279,6 +400,7 @@ p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem 6rem;
+  background: transparent !important;
 }
 
 .project-grid > .project-card:only-child {
@@ -297,7 +419,10 @@ p {
   text-decoration: none !important;
   display: flex;
   flex-direction: column;
-  transition: transform .22s ease, border-color .22s ease, background .22s ease;
+  transition:
+    transform var(--motion-base) var(--ease-ui),
+    border-color var(--motion-base) var(--ease-ui),
+    background var(--motion-base) var(--ease-ui);
   overflow: hidden;
 }
 
@@ -311,7 +436,9 @@ p {
   bottom: -100px;
   background: rgba(79,182,173,0.08);
   filter: blur(4px);
-  transition: transform .3s ease, background .3s ease;
+  transition:
+    transform 300ms var(--ease-ui),
+    background 300ms var(--ease-ui);
 }
 
 .project-card.featured::after {
@@ -344,7 +471,9 @@ p {
 
 .project-arrow {
   font-size: 1rem;
-  transition: transform .2s ease, color .2s ease;
+  transition:
+    transform var(--motion-fast) var(--ease-ui),
+    color var(--motion-fast) var(--ease-ui);
 }
 
 .project-card:hover .project-arrow {
@@ -383,6 +512,19 @@ p {
   padding: 0.3rem 0.48rem;
   border-radius: 3px;
   background: rgba(255,255,255,0.018);
+}
+
+.project-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  text-decoration: none;
+}
+
+.project-card > *:not(.project-card-link) {
+  position: relative;
+  z-index: 2;
 }
 
 /* ---------- Expertise ---------- */
@@ -445,6 +587,7 @@ p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 6rem 1.5rem 3.2rem;
+  background: transparent !important;
 }
 
 .page-intro h1 {
@@ -485,369 +628,21 @@ pre, code {
 
 .nav-footer {
   border-top: 1px solid var(--line) !important;
-  background: #090B0E;
+  background: rgba(9, 11, 14, 0.72) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   color: var(--muted-2);
 }
 
-/* ---------- Motion ---------- */
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-kicker,
-  .hero-title,
-  .hero-lead,
-  .hero-actions,
-  .hero-strip {
-    animation: reveal .7s both;
-  }
-
-  .hero-title { animation-delay: .06s; }
-  .hero-lead { animation-delay: .12s; }
-  .hero-actions { animation-delay: .18s; }
-  .hero-strip { animation-delay: .24s; }
-
-  @keyframes reveal {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-}
-
-/* ---------- Responsive ---------- */
-
-@media (max-width: 900px) {
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-strip > div:not(:last-child) {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-section {
-    min-height: auto;
-    padding-top: 5.2rem;
-  }
-
-  .hero-title {
-    font-size: clamp(3.2rem, 16vw, 5rem);
-  }
-
-  .project-grid,
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-heading-row {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .project-card {
-    min-height: 320px;
-  }
-}
-
-/* ---------- Project card link overlay ---------- */
-.project-card-link {
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  display: block;
-  text-decoration: none;
-}
-
-.project-card > *:not(.project-card-link) {
-  position: relative;
-  z-index: 2;
-}
-/* ---------- Hero photo: first-design compatible ---------- */
-
-.hero-main {
-  display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.65fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center;
-}
-
-.hero-copy {
-  min-width: 0;
-}
-
-.hero-photo-card {
-  width: 100%;
-  max-width: 340px;
-  justify-self: end;
-  padding: 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.028),
-    rgba(255,255,255,0.012)
-  );
-}
-
-.hero-photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 30%;
-  border-radius: 5px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-photo-card {
-    animation: reveal .7s .18s both;
-  }
-}
-
-@media (max-width: 900px) {
-  .hero-main {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-photo-card {
-    justify-self: start;
-    max-width: 300px;
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-photo-card {
-    max-width: 240px;
-  }
-}
-/* ---------- Enlarged profile card ---------- */
-
-.hero-photo-card {
-  max-width: 430px;
-  padding: 0.9rem;
-  border-radius: 10px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.032), rgba(255,255,255,0.012));
-  box-shadow:
-    0 20px 55px rgba(0,0,0,0.26),
-    inset 0 1px 0 rgba(255,255,255,0.025);
-}
-
-.hero-photo {
-  aspect-ratio: 4 / 5;
-  border-radius: 7px;
-}
-
-.hero-photo-caption {
-  padding: 1rem 0.25rem 0.15rem;
-}
-
-.hero-photo-name {
-  margin-bottom: 0.35rem;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-
-.hero-photo-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.66rem;
-  line-height: 1.55;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-}
-
-/* Give the image a little more room without changing the
-   original hero structure. */
-.hero-main {
-  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.75fr);
-}
-
-@media (max-width: 900px) {
-  .hero-main {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-photo-card {
-    max-width: 380px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-photo-card {
-    max-width: 310px;
-  }
-}
-/* =========================================================
-   CONTINUOUS PAGE BACKGROUND FIX
-   Removes visible horizontal bands between Quarto sections.
-   Add this at the VERY END of styles.css
-   ========================================================= */
-
-html {
-  background: #0A0C10;
-}
-
-body {
-  position: relative;
-  isolation: isolate;
-  background: transparent !important;
-}
-
-/* One continuous, fixed background for the whole website */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      circle at 78% 12%,
-      rgba(79, 182, 173, 0.07),
-      transparent 34rem
-    ),
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(242, 169, 59, 0.055),
-      transparent 30rem
-    ),
-    #0A0C10;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Quarto wrappers must not paint separate rectangular backgrounds */
-#quarto-content,
-#quarto-document-content,
-main.content,
-.page-columns,
-.page-layout-full,
-.content,
-.quarto-container,
-.quarto-title-block {
-  background: transparent !important;
-}
-
-/* Portfolio sections should flow over the same background */
-.hero-section,
-.portfolio-section,
-.page-intro,
-.project-grid-page {
-  background: transparent !important;
-}
-
-/* Keep intentional card surfaces only */
-.project-card,
-.hero-photo-card,
-.expertise-card {
-  position: relative;
-}
-
-/* Footer can remain slightly darker but without a hard top color jump */
-.nav-footer {
-  background: rgba(9, 11, 14, 0.72) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}/* =========================================================
-   SUBTLE SECTION TRANSITIONS
-   Keep continuous background, but make sections readable.
-   Add this AFTER the previous background fix.
-   ========================================================= */
-
-.hero-section,
-.section-shell {
-  position: relative;
-}
-
-/* Soft divider at the start of each content section */
-.section-shell::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(92%, 1180px);
-  height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255,255,255,0.08) 18%,
-    rgba(242,169,59,0.16) 50%,
-    rgba(255,255,255,0.08) 82%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
-/* Very subtle local lighting at the top of each section */
-.section-shell {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.014) 0%,
-      rgba(255,255,255,0.006) 5rem,
-      transparent 13rem
-    ) !important;
-}
-
-/* Slightly stronger separation immediately after hero */
-.hero-section + .section-shell::before {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(79,182,173,0.10) 20%,
-    rgba(242,169,59,0.22) 50%,
-    rgba(79,182,173,0.10) 80%,
-    transparent 100%
-  );
-}
-
-/* Add visual breathing room without creating a hard band */
-.section-shell {
-  padding-top: clamp(4.5rem, 7vw, 6.5rem);
-  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
-}
-
-/* Keep mobile transition visible but lighter */
-@media (max-width: 768px) {
-  .section-shell::before {
-    width: 88%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.09),
-      rgba(242,169,59,0.14),
-      rgba(255,255,255,0.09),
-      transparent
-    );
-  }
-
-  .section-shell {
-    padding-top: 3.75rem;
-    padding-bottom: 3.75rem;
-  }
-}
-/* =========================================================
-   BLOG
-   ========================================================= */
+/* ---------- Blog ---------- */
 
 .blog-hero {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: clamp(5rem, 9vw, 8rem) 1.5rem clamp(4rem, 7vw, 6rem);
+  background: transparent !important;
 }
 
 .blog-kicker,
@@ -892,7 +687,6 @@ main.content,
   letter-spacing: -0.04em;
 }
 
-/* Quarto listing */
 #listing-listing {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -911,28 +705,26 @@ main.content,
   overflow: hidden;
   border: 1px solid var(--line) !important;
   border-radius: 8px !important;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.025),
-      rgba(255,255,255,0.010)
-    ) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.025),
+    rgba(255,255,255,0.010)
+  ) !important;
   box-shadow: none !important;
   transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease;
+    transform var(--motion-base) var(--ease-ui),
+    border-color var(--motion-base) var(--ease-ui),
+    background var(--motion-base) var(--ease-ui);
 }
 
 .quarto-listing .card:hover {
   transform: translateY(-4px);
   border-color: rgba(242,169,59,0.35) !important;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.035),
-      rgba(242,169,59,0.025)
-    ) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.035),
+    rgba(242,169,59,0.025)
+  ) !important;
 }
 
 .quarto-listing .card-img-top {
@@ -985,7 +777,6 @@ main.content,
   background: transparent;
 }
 
-/* Individual article pages */
 .quarto-title-block .title {
   letter-spacing: -0.045em;
 }
@@ -995,26 +786,13 @@ main.content,
   color: var(--muted);
 }
 
-@media (max-width: 768px) {
-  .blog-hero {
-    padding-top: 4rem;
-  }
-
-  #listing-listing,
-  .blog-index-heading {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-/* =========================================================
-   ABOUT PAGE — two-column profile layout
-   Add this at the END of styles.css
-   ========================================================= */
+/* ---------- About page ---------- */
 
 .about-shell {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: clamp(3rem, 6vw, 5rem) 1.5rem clamp(5rem, 8vw, 7rem);
+  background: transparent !important;
 }
 
 .about-grid {
@@ -1095,10 +873,10 @@ main.content,
   font-size: 0.72rem;
   text-decoration: none;
   transition:
-    color 160ms ease,
-    border-color 160ms ease,
-    transform 160ms ease,
-    background 160ms ease;
+    color var(--motion-fast) var(--ease-ui),
+    border-color var(--motion-fast) var(--ease-ui),
+    transform var(--motion-fast) var(--ease-ui),
+    background var(--motion-fast) var(--ease-ui);
 }
 
 .about-links a:hover {
@@ -1108,20 +886,17 @@ main.content,
   transform: translateY(-2px);
 }
 
-/* Profile card */
-
 .about-photo-card {
   position: sticky;
   top: 6.5rem;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.028),
-      rgba(255,255,255,0.012)
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.028),
+    rgba(255,255,255,0.012)
+  );
   box-shadow: 0 24px 60px rgba(0,0,0,0.26);
 }
 
@@ -1156,9 +931,99 @@ main.content,
   text-transform: uppercase;
 }
 
+
+/* ---------- Navbar tools: native Quarto icons only ---------- */
+
+.navbar .quarto-navbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  color: #B8C0CB;
+  border-radius: 6px;
+  transition:
+    color var(--motion-fast) var(--ease-ui),
+    background-color var(--motion-fast) var(--ease-ui),
+    transform var(--motion-fast) var(--ease-ui);
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool:hover {
+  color: var(--amber);
+  background-color: rgba(242, 169, 59, 0.07);
+  transform: translateY(-1px);
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool .bi {
+  margin: 0;
+  line-height: 1;
+  font-size: 1rem;
+}
+
+
+/* ---------- Motion ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-kicker,
+  .hero-title,
+  .hero-lead,
+  .hero-actions,
+  .hero-photo-card,
+  .hero-strip {
+    animation: reveal var(--motion-slow) var(--ease-ui) both;
+  }
+
+  .hero-title { animation-delay: 60ms; }
+  .hero-lead { animation-delay: 120ms; }
+  .hero-actions { animation-delay: 180ms; }
+  .hero-photo-card { animation-delay: 180ms; }
+  .hero-strip { animation-delay: 240ms; }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ---------- Responsive ---------- */
+
 @media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-strip > div:not(:last-child) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    margin-right: 0;
+  }
+
+  .hero-main,
   .about-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-photo-card {
+    justify-self: start;
+    max-width: 380px;
+    margin-top: 1.5rem;
   }
 
   .about-photo-card {
@@ -1168,41 +1033,48 @@ main.content,
   }
 }
 
-@media (max-width: 640px) {
-  .about-shell {
+@media (max-width: 768px) {
+  .blog-hero {
+    padding-top: 4rem;
+  }
+
+  #listing-listing,
+  .blog-index-heading {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
-/* =========================================================
-   KAGGLE NAVBAR ICON
-   Quarto/Bootstrap has no official Kaggle brand icon.
-   This turns the Kaggle nav item's "K" into a compact icon.
-   ========================================================= */
 
-.navbar a[href="https://www.kaggle.com/mukremintulgar"] {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  min-width: 32px;
-  height: 32px;
-  padding: 0 !important;
-  margin-left: 0.15rem;
-  border-radius: 6px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.98rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--muted) !important;
-  text-decoration: none;
-  transition:
-    color 160ms ease,
-    background 160ms ease,
-    transform 160ms ease;
-}
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 5.2rem;
+  }
 
-.navbar a[href="https://www.kaggle.com/mukremintulgar"]:hover {
-  color: #20BEFF !important;
-  background: rgba(32, 190, 255, 0.07);
-  transform: translateY(-1px);
+  .hero-title {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .project-grid,
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-card {
+    min-height: 320px;
+  }
+
+  .hero-photo-card {
+    max-width: 310px;
+  }
+
+  .about-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
