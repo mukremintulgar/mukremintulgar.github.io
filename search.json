@@ -7,62 +7,6 @@
     "text": "PORTFOLIO\n  Selected Projects\n  Applied work across financial risk, econometrics, data analysis and quantitative modelling.\n\n\n\n  \n    \n      01\n      ↗\n    \n    FINANCIAL RISK · PYTHON\n    Monte Carlo Portfolio Stress Test\n    Historical and simulated downside-risk analysis for a diversified portfolio.\n    \n      Python\n      Monte Carlo\n      VaR/CVaR"
   },
   {
-    "objectID": "monte-carlo-project.html",
-    "href": "monte-carlo-project.html",
-    "title": "Monte Carlo Portfolio Stress Test",
-    "section": "",
-    "text": "The project now uses the full notebook view.\nOpen the Monte Carlo notebook →"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.\nArticles will be added here soon."
-  },
-  {
-    "objectID": "blog.html#blog",
-    "href": "blog.html#blog",
-    "title": "Blog",
-    "section": "",
-    "text": "Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.\nArticles will be added here soon."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
-  },
-  {
-    "objectID": "about.html#about-me",
-    "href": "about.html#about-me",
-    "title": "About",
-    "section": "",
-    "text": "I work at the intersection of data science, econometrics and financial analysis, with a particular interest in quantitative modelling, time-series analysis and risk.\nMy projects use tools such as Python, R and SQL to move from raw data to interpretable results, with an emphasis on clear methodology and reproducible analysis."
-  },
-  {
-    "objectID": "about.html#areas-of-interest",
-    "href": "about.html#areas-of-interest",
-    "title": "About",
-    "section": "Areas of Interest",
-    "text": "Areas of Interest\n\nData Science and Machine Learning\nEconometrics and Time Series\nFinancial Risk and Portfolio Analysis\nQuantitative Research\nData Analytics and Visualization"
-  },
-  {
-    "objectID": "about.html#connect",
-    "href": "about.html#connect",
-    "title": "About",
-    "section": "Connect",
-    "text": "Connect\n\nGitHub\nLinkedIn\nEmail"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mükremin Tulgar",
-    "section": "",
-    "text": "DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK\n\n      Turning data intodecisions.\n\n      \n        I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.\n      \n\n      \n        Explore projects →\n        View GitHub ↗\n      \n    \n\n    \n      \n      \n        Mükremin Tulgar\n        Data Science · Machine Learning · Financial Risk\n      \n    \n  \n\n  \n    \n      FOCUS\n      Data Science & Machine Learning\n    \n    \n      DOMAIN\n      Finance & Economics\n    \n    \n      TOOLS\n      Python · R · SQL\n    \n  \n\n\n\n  \n    \n      SELECTED WORK\n      Projects\n    \n    View all projects →\n  \n\n  \n    \n      \n        01\n        ↗\n      \n      FINANCIAL RISK · PYTHON\n      Monte Carlo Portfolio Stress Test\n      Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.\n      \n        Monte Carlo\n        VaR\n        Python\n      \n      \n    \n  \n\n\n\n  EXPERTISE\n  What I work with\n\n  \n    \n      01\n      Data Science\n      Data preparation, exploratory analysis, predictive modelling and model evaluation.\n    \n    \n      02\n      Econometrics\n      Time series, panel data, volatility models and quantitative economic analysis.\n    \n    \n      03\n      Financial Risk\n      Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.\n    \n    \n      04\n      Analytics\n      Python, R and SQL workflows that turn raw data into interpretable results.\n    \n  \n\n\n\n  CONTACT\n  Interested in data,markets or quantitative research?\n  I'm always open to discussing analytical projects, research and opportunities.\n  \n    Email me →\n    LinkedIn ↗"
-  },
-  {
     "objectID": "notebooks/monte_carlo_portfolio_stress_test.html",
     "href": "notebooks/monte_carlo_portfolio_stress_test.html",
     "title": "Monte Carlo Portfolio Stress Test",
@@ -166,5 +110,33 @@
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Conclusion",
     "text": "Conclusion\nThis notebook evaluates downside risk for a diversified portfolio consisting of equities, bonds, and gold. Historical VaR and CVaR summarize extreme losses observed in the sample, while the Monte Carlo simulation generates additional return scenarios based on the portfolio’s historical mean and volatility.\nThe model provides a transparent baseline for portfolio stress testing. A more advanced version could incorporate non-normal return distributions, time-varying volatility, correlations that change during crises, multi-day horizons, and explicit historical crisis scenarios."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mükremin Tulgar",
+    "section": "",
+    "text": "DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK\n\n      Turning data intodecisions.\n\n      \n        I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.\n      \n\n      \n        Explore projects →\n        View GitHub ↗\n      \n    \n\n    \n      \n      \n        Mükremin Tulgar\n        Data Science · Machine Learning · Financial Risk\n      \n    \n  \n\n  \n    \n      FOCUS\n      Data Science & Machine Learning\n    \n    \n      DOMAIN\n      Finance & Economics\n    \n    \n      TOOLS\n      Python · R · SQL\n    \n  \n\n\n\n  \n    \n      SELECTED WORK\n      Projects\n    \n    View all projects →\n  \n\n  \n    \n      \n        01\n        ↗\n      \n      FINANCIAL RISK · PYTHON\n      Monte Carlo Portfolio Stress Test\n      Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.\n      \n        Monte Carlo\n        VaR\n        Python\n      \n      \n    \n  \n\n\n\n  EXPERTISE\n  What I work with\n\n  \n    \n      01\n      Data Science\n      Data preparation, exploratory analysis, predictive modelling and model evaluation.\n    \n    \n      02\n      Econometrics\n      Time series, panel data, volatility models and quantitative economic analysis.\n    \n    \n      03\n      Financial Risk\n      Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.\n    \n    \n      04\n      Analytics\n      Python, R and SQL workflows that turn raw data into interpretable results.\n    \n  \n\n\n\n  CONTACT\n  Interested in data,markets or quantitative research?\n  I'm always open to discussing analytical projects, research and opportunities.\n  \n    Email me →\n    LinkedIn ↗"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "ABOUT · PROFILE\n\n      About Me\n\n      \n        I work at the intersection of data science, econometrics and financial analysis,\n        with a particular interest in quantitative modelling, time-series analysis and risk.\n      \n\n      \n        My projects use tools such as Python, R and SQL to move from raw data to\n        interpretable results, with an emphasis on clear methodology and reproducible analysis.\n      \n\n      \n        Areas of Interest\n\n        \n          Data Science and Machine Learning\n          Econometrics and Time Series\n          Financial Risk and Portfolio Analysis\n          Quantitative Research\n          Data Analytics and Visualization\n        \n      \n\n      \n        Connect\n\n        \n          GitHub ↗\n          LinkedIn ↗\n          Kaggle ↗\n          Email ↗\n        \n      \n    \n\n    \n      \n\n      \n        Mükremin Tulgar\n        Data Science · Econometrics · Financial Risk"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "WRITING · NOTES · EXPLAINERS\n\n  \n    Notes from the models.\n  \n\n  \n    Writing on data science, machine learning, econometrics,\n    financial risk and the ideas behind my projects.\n  \n\n\n\n  \n    LATEST\n    Articles\n  \n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "monte-carlo-project.html",
+    "href": "monte-carlo-project.html",
+    "title": "Monte Carlo Portfolio Stress Test",
+    "section": "",
+    "text": "The project now uses the full notebook view.\nOpen the Monte Carlo notebook →"
   }
 ]
