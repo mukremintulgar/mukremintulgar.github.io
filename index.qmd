@@ -71,7 +71,7 @@ toc: false
         <span>VaR</span>
         <span>Python</span>
       </div>
-      <a class="project-card-link" href="monte-carlo-project.html" aria-label="Open Monte Carlo Portfolio Stress Test"></a>
+      <a class="project-card-link" href="notebooks/monte_carlo_portfolio_stress_test.html" aria-label="Open Monte Carlo Portfolio Stress Test"></a>
     </div>
   </div>
 </section>

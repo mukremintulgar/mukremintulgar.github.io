@@ -1,0 +1,13 @@
+# Applies only to notebooks in this folder
+page-layout: article
+toc: true
+toc-title: "On this page"
+toc-depth: 2
+
+format:
+  html:
+    code-fold: false
+    code-copy: true
+    code-overflow: wrap
+    fig-responsive: true
+    anchor-sections: true
