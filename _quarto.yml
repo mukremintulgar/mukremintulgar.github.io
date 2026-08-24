@@ -1,9 +1,6 @@
 project:
   type: website
   output-dir: _site
-  resources:
-    - "lanyard-widget/dist/**"
-    - "profilecard-widget/dist/**"
 
 website:
   title: "Mükremin Tulgar"

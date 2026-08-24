@@ -1,1 +1,0 @@
-Run ../../setup-lanyard.ps1 from the portfolio root. It downloads the official React Bits card.glb into this folder.

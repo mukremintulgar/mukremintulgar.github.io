@@ -9,4 +9,3 @@ toc: false
 Notes and articles on data science, machine learning, econometrics, financial risk, and the ideas behind my projects.
 
 *Articles will be added here soon.*
-

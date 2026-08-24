@@ -23,13 +23,12 @@ toc: false
       </div>
     </div>
 
-    <div class="hero-profile-widget">
-      <iframe
-        class="hero-profile-frame"
-        src="profilecard-widget/dist/index.html"
-        title="Interactive profile card for Mükremin Tulgar"
-        loading="eager"
-      ></iframe>
+    <div class="hero-photo-card">
+      <img src="images/profile.jpg" alt="Portrait of Mükremin Tulgar" class="hero-photo">
+      <div class="hero-photo-caption">
+        <div class="hero-photo-name">Mükremin Tulgar</div>
+        <div class="hero-photo-role">Data Science · Machine Learning · Financial Risk</div>
+      </div>
     </div>
   </div>
 

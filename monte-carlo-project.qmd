@@ -25,9 +25,9 @@ toc-depth: 2
 
     <div class="project-hero-actions">
       <a class="portfolio-btn portfolio-btn-primary"
-         href="https://github.com/mukremintulgar/mukremintulgar.github.io/blob/main/notebooks/monte_carlo_portfolio_stress_test.ipynb"
+         href="https://github.com/mukremintulgar/mukremintulgar.github.io"
          target="_blank" rel="noopener">
-        View notebook ↗
+        View repository ↗
       </a>
       <a class="portfolio-btn portfolio-btn-secondary"
          href="https://github.com/mukremintulgar"
@@ -271,9 +271,9 @@ than appearing as isolated random events.
     </p>
   </div>
   <a class="portfolio-btn portfolio-btn-secondary"
-     href="https://github.com/mukremintulgar/mukremintulgar.github.io/blob/main/notebooks/monte_carlo_portfolio_stress_test.ipynb"
+     href="https://github.com/mukremintulgar/mukremintulgar.github.io"
      target="_blank" rel="noopener">
-    Open notebook ↗
+    Open repository ↗
   </a>
 </div>
 ```
@@ -317,9 +317,9 @@ horizons and explicit historical crisis scenarios.
   <h3>Want to inspect the full workflow?</h3>
   <div class="hero-actions">
     <a class="portfolio-btn portfolio-btn-primary"
-       href="https://github.com/mukremintulgar/mukremintulgar.github.io/blob/main/notebooks/monte_carlo_portfolio_stress_test.ipynb"
+       href="https://github.com/mukremintulgar/mukremintulgar.github.io"
        target="_blank" rel="noopener">
-      View notebook ↗
+      View repository ↗
     </a>
     <a class="portfolio-btn portfolio-btn-secondary" href="projects.qmd">
       Back to projects
@@ -329,4 +329,3 @@ horizons and explicit historical crisis scenarios.
 ```
 
 :::
-
