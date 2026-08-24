@@ -1,2 +1,7 @@
 /.quarto/
+/_site/
+
 **/*.quarto_ipynb
+
+/index_files/
+/projects_files/
