@@ -696,7 +696,7 @@ pre, code {
 
 .hero-lanyard-card {
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   justify-self: end;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -714,7 +714,7 @@ pre, code {
 .hero-lanyard-frame {
   display: block;
   width: 100%;
-  height: 560px;
+  height: 650px;
   border: 0;
   background: transparent;
 }
@@ -726,7 +726,7 @@ pre, code {
 }
 
 .hero-main {
-  grid-template-columns: minmax(0, 1.35fr) minmax(390px, 0.85fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(430px, 0.95fr);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -742,12 +742,12 @@ pre, code {
 
   .hero-lanyard-card {
     justify-self: start;
-    max-width: 470px;
+    max-width: 520px;
     margin-top: 1.5rem;
   }
 
   .hero-lanyard-frame {
-    height: 520px;
+    height: 590px;
   }
 }
 
@@ -757,6 +757,58 @@ pre, code {
   }
 
   .hero-lanyard-frame {
-    height: 470px;
+    height: 530px;
+  }
+}
+
+/* =========================================================
+   React Bits ProfileCard host
+   ========================================================= */
+
+.hero-profile-widget {
+  width: 100%;
+  max-width: 500px;
+  justify-self: end;
+  min-width: 0;
+}
+
+.hero-profile-frame {
+  display: block;
+  width: 100%;
+  height: 620px;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.hero-main {
+  grid-template-columns: minmax(0, 1.35fr) minmax(400px, 0.85fr);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-profile-widget {
+    animation: reveal .7s .18s both;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-profile-widget {
+    justify-self: start;
+    max-width: 500px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-profile-widget {
+    max-width: 100%;
+  }
+
+  .hero-profile-frame {
+    height: 520px;
   }
 }

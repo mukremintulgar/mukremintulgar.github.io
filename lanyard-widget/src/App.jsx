@@ -5,7 +5,7 @@ export default function App() {
   return (
     <main className="lanyard-widget-shell">
       <Lanyard
-        position={[0, 0, 20]}
+        position={[0, 0, 13.5]}
         gravity={[0, -40, 0]}
         frontImage="./profile.jpg"
         imageFit="cover"

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://mukremintulgar.github.io/README-PROFILECARD.html</loc>
+    <lastmod>2026-08-23T23:57:44.131Z</lastmod>
+  </url>
+  <url>
     <loc>https://mukremintulgar.github.io/projects.html</loc>
     <lastmod>2026-08-22T15:55:44.884Z</lastmod>
   </url>
@@ -18,10 +22,14 @@
   </url>
   <url>
     <loc>https://mukremintulgar.github.io/index.html</loc>
-    <lastmod>2026-08-23T23:23:16.187Z</lastmod>
+    <lastmod>2026-08-23T23:57:45.311Z</lastmod>
   </url>
   <url>
     <loc>https://mukremintulgar.github.io/notebooks/monte_carlo_portfolio_stress_test.html</loc>
     <lastmod>2026-08-17T15:39:16.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mukremintulgar.github.io/README-LANYARD.html</loc>
+    <lastmod>2026-08-23T23:31:28.030Z</lastmod>
   </url>
 </urlset>

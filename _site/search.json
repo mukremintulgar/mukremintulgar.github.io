@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "README-PROFILECARD.html",
+    "href": "README-PROFILECARD.html",
+    "title": "Mükremin Tulgar",
+    "section": "",
+    "text": "PROFILECARD TEST — KEEP LANYARD AS A FALLBACK\nThis creates a SECOND React widget: profilecard-widget/\nYour existing: lanyard-widget/ is not deleted.\nReplace/add: - _quarto.yml - index.qmd - styles.css - profilecard-widget/ - setup-profilecard.ps1\nThen from the portfolio root:\npowershell -ExecutionPolicy Bypass -File .\\setup-profilecard.ps1\nquarto render\nquarto preview\nProfile settings: - Name: Mükremin Tulgar - Title: Data Science · Financial Risk - Handle: @mukremintulgar - Status: Portfolio - Contact button: opens About - Tilt: enabled - Mobile tilt: disabled - Behind glow: enabled - React Bits default purple/blue inner gradient\nTo switch back to Lanyard later, change this in index.qmd:\nsrc=\"profilecard-widget/dist/index.html\"\nback to:\nsrc=\"lanyard-widget/dist/index.html\"\nand use the previous Lanyard wrapper if desired."
+  },
+  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
@@ -102,7 +109,7 @@
     "href": "index.html",
     "title": "Mükremin Tulgar",
     "section": "",
-    "text": "DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK\n\n      Turning data intodecisions.\n\n      \n        I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.\n      \n\n      \n        Explore projects →\n        View GitHub ↗\n      \n    \n\n    \n      \n      \n        Mükremin Tulgar\n        Data Science · Machine Learning · Financial Risk\n      \n    \n  \n\n  \n    \n      FOCUS\n      Data Science & Machine Learning\n    \n    \n      DOMAIN\n      Finance & Economics\n    \n    \n      TOOLS\n      Python · R · SQL\n    \n  \n\n\n\n  \n    \n      SELECTED WORK\n      Projects\n    \n    View all projects →\n  \n\n  \n    \n      \n        01\n        ↗\n      \n      FINANCIAL RISK · PYTHON\n      Monte Carlo Portfolio Stress Test\n      Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.\n      \n        Monte Carlo\n        VaR\n        Python\n      \n      \n    \n  \n\n\n\n  EXPERTISE\n  What I work with\n\n  \n    \n      01\n      Data Science\n      Data preparation, exploratory analysis, predictive modelling and model evaluation.\n    \n    \n      02\n      Econometrics\n      Time series, panel data, volatility models and quantitative economic analysis.\n    \n    \n      03\n      Financial Risk\n      Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.\n    \n    \n      04\n      Analytics\n      Python, R and SQL workflows that turn raw data into interpretable results.\n    \n  \n\n\n\n  CONTACT\n  Interested in data,markets or quantitative research?\n  I'm always open to discussing analytical projects, research and opportunities.\n  \n    Email me →\n    LinkedIn ↗"
+    "text": "DATA SCIENCE · MACHINE LEARNING · ECONOMETRICS · FINANCIAL RISK\n\n      Turning data intodecisions.\n\n      \n        I build quantitative models for finance, economics and risk — combining statistical thinking, econometrics, machine learning and data science with practical analysis.\n      \n\n      \n        Explore projects →\n        View GitHub ↗\n      \n    \n\n    \n      \n    \n  \n\n  \n    \n      FOCUS\n      Data Science & Machine Learning\n    \n    \n      DOMAIN\n      Finance & Economics\n    \n    \n      TOOLS\n      Python · R · SQL\n    \n  \n\n\n\n  \n    \n      SELECTED WORK\n      Projects\n    \n    View all projects →\n  \n\n  \n    \n      \n        01\n        ↗\n      \n      FINANCIAL RISK · PYTHON\n      Monte Carlo Portfolio Stress Test\n      Downside-risk analysis of a multi-asset portfolio using historical and simulated VaR/CVaR.\n      \n        Monte Carlo\n        VaR\n        Python\n      \n      \n    \n  \n\n\n\n  EXPERTISE\n  What I work with\n\n  \n    \n      01\n      Data Science\n      Data preparation, exploratory analysis, predictive modelling and model evaluation.\n    \n    \n      02\n      Econometrics\n      Time series, panel data, volatility models and quantitative economic analysis.\n    \n    \n      03\n      Financial Risk\n      Portfolio risk, stress testing, VaR/CVaR and market-focused quantitative modelling.\n    \n    \n      04\n      Analytics\n      Python, R and SQL workflows that turn raw data into interpretable results.\n    \n  \n\n\n\n  CONTACT\n  Interested in data,markets or quantitative research?\n  I'm always open to discussing analytical projects, research and opportunities.\n  \n    Email me →\n    LinkedIn ↗"
   },
   {
     "objectID": "notebooks/monte_carlo_portfolio_stress_test.html",
@@ -208,5 +215,61 @@
     "title": "Monte Carlo Portfolio Stress Test",
     "section": "Conclusion",
     "text": "Conclusion\nThis notebook evaluates downside risk for a diversified portfolio consisting of equities, bonds, and gold. Historical VaR and CVaR summarize extreme losses observed in the sample, while the Monte Carlo simulation generates additional return scenarios based on the portfolio’s historical mean and volatility.\nThe model provides a transparent baseline for portfolio stress testing. A more advanced version could incorporate non-normal return distributions, time-varying volatility, correlations that change during crises, multi-day horizons, and explicit historical crisis scenarios."
+  },
+  {
+    "objectID": "README-LANYARD.html",
+    "href": "README-LANYARD.html",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "This package keeps the Quarto portfolio intact and replaces only the static profile image card on the homepage with a compiled React/Vite Lanyard widget.\n\n\nReact Bits Lanyard is JSX and depends on React Three Fiber / Three.js / Rapier. A Quarto page cannot execute JSX directly. The lanyard-widget/ folder is an isolated React island which is built to static HTML/JS and embedded into Quarto with an iframe.\n\n\n\nCopy everything in this package into the root of your portfolio project.\nThen from PowerShell in the portfolio root run:\npowershell -ExecutionPolicy Bypass -File .\\setup-lanyard.ps1\nThe script: 1. downloads the official React Bits card.glb, 2. runs npm install inside lanyard-widget, 3. runs npm run build.\nThen run:\nquarto render\nquarto preview\n\n\n\n&lt;Lanyard\n  position={[0, 0, 20]}\n  gravity={[0, -40, 0]}\n  frontImage=\"./profile.jpg\"\n  imageFit=\"cover\"\n  lanyardWidth={1}\n/&gt;\nThe uploaded profile photo is copied into the widget and becomes the front face of the badge. Remove frontImage in App.jsx if you want the original React Bits card artwork instead.\n\n\n\nEdit lanyard-widget/src/App.jsx, for example:\n&lt;Lanyard\n  position={[0,0,24]}\n  gravity={[0,-40,0]}\n  frontImage=\"./my-front.png\"\n  backImage=\"./my-back.png\"\n  imageFit=\"cover\"\n  lanyardImage=\"./my-band.png\"\n  lanyardWidth={1}\n/&gt;\nPlace public custom images in lanyard-widget/public/.\n\n\n\n\nlanyard-widget/src/Lanyard.jsx — React Bits JS-CSS source\nlanyard-widget/src/Lanyard.css — React Bits CSS source\nlanyard-widget/src/card.glb — downloaded by setup script\nlanyard-widget/src/lanyard.png — official React Bits band texture\nlanyard-widget/public/profile.jpg — your profile image\nlanyard-widget/vite.config.js — includes assetsInclude: ['**/*.glb']\nindex.qmd — embeds the built widget in the hero\n_quarto.yml — copies lanyard-widget/dist/** into _site\n\n\n\n\nAfter previewing:\ngit add .\ngit commit -m \"Add interactive React Bits lanyard\"\ngit push origin main\nquarto publish gh-pages\nYou should commit the generated lanyard-widget/dist/ folder as well, because the Quarto page embeds that static build.\n\n\n\nRegistry: https://reactbits.dev/r/Lanyard-JS-CSS.json\nComponent docs: https://reactbits.dev/components/lanyard\nOfficial assets: https://github.com/DavidHDev/react-bits/tree/main/src/content/Components/Lanyard"
+  },
+  {
+    "objectID": "README-LANYARD.html#why-there-is-a-vite-sub-project",
+    "href": "README-LANYARD.html#why-there-is-a-vite-sub-project",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "React Bits Lanyard is JSX and depends on React Three Fiber / Three.js / Rapier. A Quarto page cannot execute JSX directly. The lanyard-widget/ folder is an isolated React island which is built to static HTML/JS and embedded into Quarto with an iframe."
+  },
+  {
+    "objectID": "README-LANYARD.html#install",
+    "href": "README-LANYARD.html#install",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "Copy everything in this package into the root of your portfolio project.\nThen from PowerShell in the portfolio root run:\npowershell -ExecutionPolicy Bypass -File .\\setup-lanyard.ps1\nThe script: 1. downloads the official React Bits card.glb, 2. runs npm install inside lanyard-widget, 3. runs npm run build.\nThen run:\nquarto render\nquarto preview"
+  },
+  {
+    "objectID": "README-LANYARD.html#react-bits-configuration-used",
+    "href": "README-LANYARD.html#react-bits-configuration-used",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "&lt;Lanyard\n  position={[0, 0, 20]}\n  gravity={[0, -40, 0]}\n  frontImage=\"./profile.jpg\"\n  imageFit=\"cover\"\n  lanyardWidth={1}\n/&gt;\nThe uploaded profile photo is copied into the widget and becomes the front face of the badge. Remove frontImage in App.jsx if you want the original React Bits card artwork instead."
+  },
+  {
+    "objectID": "README-LANYARD.html#custom-card-faces-band",
+    "href": "README-LANYARD.html#custom-card-faces-band",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "Edit lanyard-widget/src/App.jsx, for example:\n&lt;Lanyard\n  position={[0,0,24]}\n  gravity={[0,-40,0]}\n  frontImage=\"./my-front.png\"\n  backImage=\"./my-back.png\"\n  imageFit=\"cover\"\n  lanyardImage=\"./my-band.png\"\n  lanyardWidth={1}\n/&gt;\nPlace public custom images in lanyard-widget/public/."
+  },
+  {
+    "objectID": "README-LANYARD.html#important-files",
+    "href": "README-LANYARD.html#important-files",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "lanyard-widget/src/Lanyard.jsx — React Bits JS-CSS source\nlanyard-widget/src/Lanyard.css — React Bits CSS source\nlanyard-widget/src/card.glb — downloaded by setup script\nlanyard-widget/src/lanyard.png — official React Bits band texture\nlanyard-widget/public/profile.jpg — your profile image\nlanyard-widget/vite.config.js — includes assetsInclude: ['**/*.glb']\nindex.qmd — embeds the built widget in the hero\n_quarto.yml — copies lanyard-widget/dist/** into _site"
+  },
+  {
+    "objectID": "README-LANYARD.html#publishing",
+    "href": "README-LANYARD.html#publishing",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "After previewing:\ngit add .\ngit commit -m \"Add interactive React Bits lanyard\"\ngit push origin main\nquarto publish gh-pages\nYou should commit the generated lanyard-widget/dist/ folder as well, because the Quarto page embeds that static build."
+  },
+  {
+    "objectID": "README-LANYARD.html#upstream-sources",
+    "href": "README-LANYARD.html#upstream-sources",
+    "title": "React Bits Lanyard + Quarto integration",
+    "section": "",
+    "text": "Registry: https://reactbits.dev/r/Lanyard-JS-CSS.json\nComponent docs: https://reactbits.dev/components/lanyard\nOfficial assets: https://github.com/DavidHDev/react-bits/tree/main/src/content/Components/Lanyard"
   }
 ]
