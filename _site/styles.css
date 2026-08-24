@@ -1078,3 +1078,211 @@ pre, code {
     padding-right: 1rem;
   }
 }
+/* =========================================================
+   STATISTICAL FIELD BACKGROUND
+   Quarto-friendly subtle interactive background
+   ========================================================= */
+
+:root {
+  --sf-amber: rgba(242, 169, 59, 0.10);
+  --sf-amber-strong: rgba(242, 169, 59, 0.18);
+  --sf-teal: rgba(79, 182, 173, 0.10);
+  --sf-teal-strong: rgba(79, 182, 173, 0.18);
+  --sf-line: rgba(255, 255, 255, 0.035);
+  --sf-line-2: rgba(255, 255, 255, 0.02);
+  --sf-dot: rgba(255, 255, 255, 0.08);
+}
+
+/* Keep page content above the effect */
+body {
+  position: relative;
+}
+
+.stat-field-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.stat-field-bg > div {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+  transition: transform 260ms ease-out;
+}
+
+/* Subtle grid / covariance field */
+.sf-grid {
+  background:
+    linear-gradient(to right, var(--sf-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--sf-line) 1px, transparent 1px),
+    linear-gradient(to right, var(--sf-line-2) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--sf-line-2) 1px, transparent 1px);
+  background-size: 72px 72px, 72px 72px, 18px 18px, 18px 18px;
+  opacity: 0.32;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+}
+
+/* Highlighted matrix cells */
+.sf-cells {
+  opacity: 0.36;
+  background:
+    radial-gradient(circle at 18% 30%, var(--sf-teal-strong) 0 10px, transparent 11px),
+    radial-gradient(circle at 22% 30%, rgba(79, 182, 173, 0.09) 0 10px, transparent 11px),
+    radial-gradient(circle at 48% 52%, var(--sf-amber) 0 12px, transparent 13px),
+    radial-gradient(circle at 55% 52%, rgba(242, 169, 59, 0.08) 0 12px, transparent 13px),
+    radial-gradient(circle at 71% 24%, rgba(79, 182, 173, 0.08) 0 14px, transparent 15px),
+    radial-gradient(circle at 73% 24%, rgba(79, 182, 173, 0.05) 0 14px, transparent 15px),
+    radial-gradient(circle at 34% 70%, rgba(242, 169, 59, 0.06) 0 16px, transparent 17px),
+    radial-gradient(circle at 36% 70%, rgba(242, 169, 59, 0.04) 0 16px, transparent 17px);
+  filter: blur(1px);
+}
+
+/* Small scatter / sample points */
+.sf-dots {
+  opacity: 0.28;
+  background-image:
+    radial-gradient(circle at 14% 21%, var(--sf-dot) 0 1.2px, transparent 1.8px),
+    radial-gradient(circle at 26% 44%, rgba(79,182,173,0.45) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 38% 15%, rgba(255,255,255,0.65) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 43% 62%, rgba(242,169,59,0.45) 0 1.4px, transparent 2px),
+    radial-gradient(circle at 55% 33%, rgba(255,255,255,0.55) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 68% 58%, rgba(79,182,173,0.35) 0 1.3px, transparent 1.9px),
+    radial-gradient(circle at 76% 18%, rgba(255,255,255,0.55) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 84% 49%, rgba(242,169,59,0.35) 0 1.2px, transparent 1.8px);
+}
+
+/* Soft quantitative glow field */
+.sf-glow {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(242,169,59,0.06), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(79,182,173,0.06), transparent 30%),
+    radial-gradient(circle at 58% 72%, rgba(79,182,173,0.045), transparent 34%),
+    radial-gradient(circle at 34% 74%, rgba(242,169,59,0.04), transparent 30%);
+  filter: blur(8px);
+}
+
+/* Curves: subtle distribution / time-series feel */
+.sf-curve,
+.sf-curve::before,
+.sf-curve::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sf-curve-1 {
+  width: 1300px;
+  height: 520px;
+  left: -140px;
+  top: 12%;
+  border: 1.5px solid rgba(79,182,173,0.14);
+  clip-path: inset(58% 0 0 0);
+  transform: rotate(-5deg);
+}
+
+.sf-curve-1::before {
+  inset: 24px 42px 0 42px;
+  border: 1px solid rgba(79,182,173,0.08);
+  clip-path: inset(58% 0 0 0);
+}
+
+.sf-curve-2 {
+  width: 1150px;
+  height: 480px;
+  right: -140px;
+  top: 30%;
+  border: 1.5px solid rgba(242,169,59,0.15);
+  clip-path: inset(58% 0 0 0);
+  transform: rotate(4deg);
+}
+
+.sf-curve-2::before {
+  inset: 20px 36px 0 36px;
+  border: 1px solid rgba(242,169,59,0.08);
+  clip-path: inset(58% 0 0 0);
+}
+
+.sf-curve-3 {
+  width: 1450px;
+  height: 620px;
+  left: 6%;
+  bottom: -220px;
+  border: 1.2px solid rgba(255,255,255,0.07);
+  clip-path: inset(58% 0 0 0);
+  transform: rotate(-2deg);
+  opacity: 0.65;
+}
+
+/* Optional tiny axis marker look */
+.sf-axis {
+  opacity: 0.18;
+  background:
+    linear-gradient(to right, transparent calc(50% - .5px), rgba(255,255,255,0.08) calc(50% - .5px), rgba(255,255,255,0.08) calc(50% + .5px), transparent calc(50% + .5px)),
+    linear-gradient(to bottom, transparent calc(70% - .5px), rgba(255,255,255,0.08) calc(70% - .5px), rgba(255,255,255,0.08) calc(70% + .5px), transparent calc(70% + .5px));
+  mask-image: linear-gradient(to bottom, transparent 0, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 15%, black 85%, transparent 100%);
+}
+
+/* Floating animation */
+@keyframes sf-float-a {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-10px,0); }
+}
+
+@keyframes sf-float-b {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,12px,0); }
+}
+
+@keyframes sf-pulse {
+  0%, 100% { opacity: 0.26; }
+  50% { opacity: 0.36; }
+}
+
+.sf-glow { animation: sf-float-a 18s ease-in-out infinite; }
+.sf-cells { animation: sf-pulse 9s ease-in-out infinite; }
+.sf-curve-1 { animation: sf-float-a 20s ease-in-out infinite; }
+.sf-curve-2 { animation: sf-float-b 24s ease-in-out infinite; }
+.sf-curve-3 { animation: sf-float-a 28s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sf-glow,
+  .sf-cells,
+  .sf-curve-1,
+  .sf-curve-2,
+  .sf-curve-3 {
+    animation: none;
+  }
+
+  .stat-field-bg > div {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .sf-grid { opacity: 0.22; }
+  .sf-cells { opacity: 0.24; }
+  .sf-dots { opacity: 0.20; }
+  .sf-curve-1,
+  .sf-curve-2,
+  .sf-curve-3 {
+    opacity: 0.75;
+    transform: scale(.92);
+  }
+}
+
+@media (max-width: 640px) {
+  .sf-grid { opacity: 0.16; }
+  .sf-cells,
+  .sf-dots,
+  .sf-axis { opacity: 0.14; }
+  .sf-curve-1,
+  .sf-curve-2,
+  .sf-curve-3 {
+    opacity: 0.42;
+  }
+}

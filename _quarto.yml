@@ -49,7 +49,9 @@ website:
 format:
   html:
     theme: darkly
-    css: styles.css
+    css:
+      - styles.css
+      - statistical-field.css
     toc: true
     code-copy: true
     code-overflow: wrap
