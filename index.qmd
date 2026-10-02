@@ -3,9 +3,6 @@ title: "Mükremin Tulgar"
 page-layout: full
 title-block-banner: false
 toc: false
-format:
-  html:
-    include-before-body: statistical-field-snippet.html
 ---
 
 ```{=html}
